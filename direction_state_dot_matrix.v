@@ -87,8 +87,8 @@ module direction_state_dot_matrix(clk, resetn, dot_col, dot_raw, elv1_dir, elv2_
             	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
             	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
             	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111111; end
+            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111111111; end
 				endcase
 				elv1_prev_dir = elv1_dir;
 			end
@@ -109,17 +109,17 @@ module direction_state_dot_matrix(clk, resetn, dot_col, dot_raw, elv1_dir, elv2_
 							4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
 							4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
 							4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-							4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-							4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+							4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111111; end
+							4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111111111; end
 						endcase
 					end
 					2'b1 : begin
 						case(dot_clk_count)
-							4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
-							4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
+							4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111110011; end
+							4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11111111111001; end
 							4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-							4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-							4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+							4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b11111111111001; end
+							4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11111111110011; end
 						endcase
 					end
 				endcase
@@ -139,21 +139,21 @@ module direction_state_dot_matrix(clk, resetn, dot_col, dot_raw, elv1_dir, elv2_
 		case (elv2_dir)
 			0 : begin
 				case(dot_clk_count)
-            	4'd4	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
-            	4'd3	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
-            	4'd2	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-            	4'd1	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-            	4'd0	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11001111111111; end
+            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b10011111111111; end
+            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00000000000000; end
+            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b10011111111111; end
+            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11001111111111; end
 				endcase
 				elv2_prev_dir = elv2_dir;
 			end
 			1 : begin
 				case(dot_clk_count)
-            	4'd4	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111110011; end
-            	4'd3	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11111111111001; end
-            	4'd2	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-            	4'd1	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b11111111111001; end
-            	4'd0	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11111111110011; end
+            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11111111110011; end
+            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b11111111111001; end
+            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00000000000000; end
+            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11111111111001; end
+            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111110011; end
 				endcase
 				elv2_prev_dir = elv2_dir;
 			end
@@ -161,31 +161,31 @@ module direction_state_dot_matrix(clk, resetn, dot_col, dot_raw, elv1_dir, elv2_
 				case (elv2_prev_dir)
 					2'b0 : begin
 						case(dot_clk_count)
-							4'd4	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
-							4'd3	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
-							4'd2	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-							4'd1	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-							4'd0	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+							4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11001111111111; end
+							4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b10011111111111; end
+							4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00000000000000; end
+							4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b10011111111111; end
+							4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11001111111111; end
 						endcase
 					end
 					2'b1 : begin
 						case(dot_clk_count)
-							4'd4	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11001111111111; end
-							4'd3	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b10011111111111; end
-							4'd2	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00000000000000; end
-							4'd1	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b10011111111001; end
-							4'd0	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11001111110011; end
+							4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11111111110011; end
+							4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b11111111111001; end
+							4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00000000000000; end
+							4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11111111111001; end
+							4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111110011; end
 						endcase
 					end
 				endcase
 			end
 			3 : begin
 				case(dot_clk_count)
-            	4'd4	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            	4'd3	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11111111111111; end
-            	4'd2	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b11111111111111; end
-            	4'd0	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11111111111111; end
+            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11111111111111; end
+            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b11111111111111; end
+            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b11111111111111; end
+            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11111111111111; end
+            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
 				endcase
 			end
 		endcase
