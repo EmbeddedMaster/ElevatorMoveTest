@@ -62,8 +62,6 @@ module elevator_simulator(
 	wire input_confirm;
 	
 	//About elevator info
-	reg[7:0] elv_count;
-	
 	reg[4:0] elv1_floor, elv2_floor;
 	reg[1:0] elv1_dir, elv2_dir;
 	reg[3:0] elv1_stop_count, elv2_stop_count;
@@ -135,21 +133,20 @@ module elevator_simulator(
 		count = 0;
 		
 		//elvator
-		elv_count = 0;
-		elv1_floor = 1;
-		elv2_floor = 9;
-		elv1_dir = 1'b1;
-		elv2_dir = 1'b0;
+		elv1_floor = 9;
+		elv2_floor = 1;
+		elv1_dir = 3;
+		elv2_dir = 3;
 		elv1_stop_count = 0;
 		elv2_stop_count = 0;
 		
 		elv1_stop_list = 0;
 		elv2_stop_list = 0;
 		
-		curr = 0;
-		dest = 0;
-		prev_curr = 0;
-		prev_dest = 0;
+		curr = 1;
+		dest = 1;
+		prev_curr = 1;
+		prev_dest = 1;
 		
 		sched_target = 0;
 		prev_sched_target = 0;
@@ -157,11 +154,30 @@ module elevator_simulator(
 
 	always @(posedge clk_in)
 	begin
-		if (count < 64'd36000000) begin
+		if (count < 64'd24000000) begin
 			count = count + 1; 
+			
+			/*** do something posedge cpu clock ***/
+			//add stop list
+			if(((prev_curr != curr) || (prev_dest != dest)) && (curr!=dest)) begin
+				if(sched_target == 0)
+				begin
+					elv1_stop_list[curr] = 1;
+					elv1_stop_list[dest] = 1;
+				end
+				else if(sched_target == 1)
+				begin
+					elv2_stop_list[curr] = 1;
+					elv2_stop_list[dest] = 1;
+				end
+				
+				prev_curr = curr;
+				prev_dest = dest;
+			end
 		end
 		else begin
 			count = 0;
+			/*** do someting...	(here is 1sec clk out) ***/
 			
 			/****** elevator1 ******/
 			//check stop list (check arrival)
@@ -181,20 +197,20 @@ module elevator_simulator(
 					elv1_dir = 3;
 				end
 				else begin
-					if((get_max_floor(elv1_stop_list)-curr)<0) begin
-						elv1_dir = 1'b0;
+					if((get_max_floor(elv1_stop_list)-elv1_floor)<0) begin
+						elv1_dir = 0;
 					end
 					else begin
-						elv1_dir = 1'b1;
+						elv1_dir = 1;
 					end
 				end
 			end
 			
 			//move
-			if(elv1_dir == 2'b1) begin
+			if(elv1_dir == 1) begin
 				elv1_floor = elv1_floor + 1;
 			end
-			else if (elv1_dir == 2'b0) begin
+			else if (elv1_dir == 0) begin
 				elv1_floor = elv1_floor - 1;
 			end
 			else begin
@@ -220,20 +236,20 @@ module elevator_simulator(
 					elv2_dir = 3;
 				end
 				else begin
-					if((get_max_floor(elv2_stop_list)-curr)<0) begin
-						elv2_dir = 1'b0;
+					if((get_max_floor(elv2_stop_list)-elv2_floor)<0) begin
+						elv2_dir = 0;
 					end
 					else begin
-						elv2_dir = 1'b1;
+						elv2_dir = 1;
 					end
 				end
 			end
 			
 			//move
-			if(elv2_dir == 2'b1) begin
+			if(elv2_dir == 1) begin
 				elv2_floor = elv2_floor + 1;
 			end
-			else if (elv2_dir == 2'b0) begin
+			else if (elv2_dir == 0) begin
 				elv2_floor = elv2_floor - 1;
 			end
 			else begin
@@ -242,7 +258,7 @@ module elevator_simulator(
 			
 			
 			
-			//do someting...	(here is 1sec clk out)
+			/////DO NOT ERASE!
 			/*if(elv2_dir==1'b0) begin
 				elv2_floor = elv2_floor - 1;
 			end
@@ -263,26 +279,7 @@ module elevator_simulator(
 				
 		end 
 		
-		//do something posedge cpu clock
 		
-		
-		
-		
-		if((prev_curr != curr) && (prev_dest != dest)) begin
-			if(sched_target == 0)
-			begin
-				elv1_stop_list[curr] = 1;
-				elv1_stop_list[dest] = 1;
-			end
-			else if(sched_target == 1)
-			begin
-				elv2_stop_list[curr] = 1;
-				elv2_stop_list[dest] = 1;
-			end
-			
-			prev_curr = curr;
-			prev_dest = dest;
-		end
 	end
 
 

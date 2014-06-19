@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elevator_simulator
-Fri Jun 20 03:48:12 2014
+Fri Jun 20 06:48:06 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -51,15 +51,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 20 03:48:12 2014           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 20 06:48:06 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; elevator_simulator                              ;
 ; Top-level Entity Name              ; elevator_simulator                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 543                                             ;
-;     Total combinational functions  ; 519                                             ;
-;     Dedicated logic registers      ; 257                                             ;
-; Total registers                    ; 257                                             ;
+; Total logic elements               ; 530                                             ;
+;     Total combinational functions  ; 494                                             ;
+;     Dedicated logic registers      ; 279                                             ;
+; Total registers                    ; 279                                             ;
 ; Total pins                         ; 74                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -183,28 +183,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 543    ;
+; Estimated Total logic elements              ; 530    ;
 ;                                             ;        ;
-; Total combinational functions               ; 519    ;
+; Total combinational functions               ; 494    ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 252    ;
-;     -- 3 input functions                    ; 76     ;
-;     -- <=2 input functions                  ; 191    ;
+;     -- 4 input functions                    ; 223    ;
+;     -- 3 input functions                    ; 55     ;
+;     -- <=2 input functions                  ; 216    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 391    ;
-;     -- arithmetic mode                      ; 128    ;
+;     -- normal mode                          ; 332    ;
+;     -- arithmetic mode                      ; 162    ;
 ;                                             ;        ;
-; Total registers                             ; 257    ;
-;     -- Dedicated logic registers            ; 257    ;
+; Total registers                             ; 279    ;
+;     -- Dedicated logic registers            ; 279    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 74     ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; clk_in ;
-; Maximum fan-out                             ; 228    ;
-; Total fan-out                               ; 2414   ;
-; Average fan-out                             ; 2.84   ;
+; Maximum fan-out                             ; 251    ;
+; Total fan-out                               ; 2320   ;
+; Average fan-out                             ; 2.74   ;
 +---------------------------------------------+--------+
 
 
@@ -213,12 +213,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
-; |elevator_simulator                               ; 519 (1)           ; 257 (8)      ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |elevator_simulator                                              ; work         ;
-;    |direction_state_dot_matrix:md_elv_directions| ; 105 (105)         ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions ; work         ;
-;    |draw_elevator_text_lcd:md_elv_draw|           ; 184 (184)         ; 75 (75)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw           ; work         ;
+; |elevator_simulator                               ; 494 (102)         ; 279 (84)     ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |elevator_simulator                                              ; work         ;
+;    |direction_state_dot_matrix:md_elv_directions| ; 123 (123)         ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions ; work         ;
+;    |draw_elevator_text_lcd:md_elv_draw|           ; 125 (125)         ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw           ; work         ;
 ;    |elevator_control_push_btns:md_elv_control|    ; 56 (56)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|elevator_control_push_btns:md_elv_control    ; work         ;
-;    |floor_seven_segment:md_elv_floors|            ; 112 (112)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|floor_seven_segment:md_elv_floors            ; work         ;
-;    |spin_elevator_step_motor:md_elv_spin|         ; 61 (61)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin         ; work         ;
+;    |floor_seven_segment:md_elv_floors|            ; 88 (88)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|floor_seven_segment:md_elv_floors            ; work         ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -326,20 +325,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
 ; Register name                                                            ; Reason for Removal                                                      ;
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-; elv1_floor[4]                                                            ; Stuck at GND due to stuck port data_in                                  ;
-; elv2_floor[4]                                                            ; Stuck at GND due to stuck port data_in                                  ;
+; curr[4]                                                                  ; Stuck at GND due to stuck port data_in                                  ;
+; dest[4]                                                                  ; Stuck at GND due to stuck port data_in                                  ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_e[0..4,6..12,14..20,22..28,30,31] ; Stuck at GND due to stuck port data_in                                  ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_a[0..4,6..12,14..20,22..28,30,31] ; Stuck at GND due to stuck port data_in                                  ;
-; elv1_dir[0,1]                                                            ; Stuck at GND due to stuck port data_in                                  ;
-; elv2_dir[1]                                                              ; Stuck at GND due to stuck port data_in                                  ;
-; elv2_dir[0]                                                              ; Stuck at VCC due to stuck port data_in                                  ;
-; cnt2[1..6]                                                               ; Lost fanout                                                             ;
-; clk_out                                                                  ; Lost fanout                                                             ;
-; cnt[0..7]                                                                ; Lost fanout                                                             ;
-; cnt2[0]                                                                  ; Lost fanout                                                             ;
-; clk_out2                                                                 ; Lost fanout                                                             ;
-; cnt2[7..32]                                                              ; Lost fanout                                                             ;
-; cnt[8..32]                                                               ; Lost fanout                                                             ;
+; direction_state_dot_matrix:md_elv_directions|elv1_prev_dir[1]            ; Stuck at GND due to stuck port data_in                                  ;
+; direction_state_dot_matrix:md_elv_directions|elv2_prev_dir[1]            ; Stuck at GND due to stuck port data_in                                  ;
+; prev_curr[4]                                                             ; Stuck at GND due to stuck port data_in                                  ;
+; prev_dest[4]                                                             ; Stuck at GND due to stuck port data_in                                  ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_a[29]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_a[21]                ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_a[21]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_a[13]                ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_a[13]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_a[5]                 ;
@@ -347,15 +340,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; draw_elevator_text_lcd:md_elv_draw|reg_e[29]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_e[21]                ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_e[21]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_e[13]                ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_e[13]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_e[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_f[13,21]                          ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_h[13,21,29]                       ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_f[29]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_g[5,13,21,29]                     ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_f[13,21,29]                       ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[21]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[5]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[13]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[13,21]                          ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[29]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[29]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_f[5]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_f[9..12,14..20,22..28,30,31]      ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_f[8]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_b[5,13,21,29]                     ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_d[13,21,29]                       ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
-; draw_elevator_text_lcd:md_elv_draw|reg_c[5,13,21,29]                     ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_d[13,29]                          ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_c[13,21,29]                       ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_b[13,21]                          ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_d[21]                             ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_c[5]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_b[5,29]                           ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_d[5]                 ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_b[9..12,14..20,22..28,30,31]      ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_b[8]                 ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_h[1..4,6,7]                       ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[0]                 ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_h[8,9,11,12,14,15]                ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[10]                ;
@@ -378,6 +377,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; direction_state_dot_matrix:md_elv_directions|dot_raw_reg[4..9,13]        ; Merged with direction_state_dot_matrix:md_elv_directions|dot_raw_reg[0] ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_f[8]                              ; Stuck at GND due to stuck port data_in                                  ;
 ; draw_elevator_text_lcd:md_elv_draw|reg_b[8]                              ; Stuck at GND due to stuck port data_in                                  ;
+; elv1_dir[1]                                                              ; Stuck at VCC due to stuck port data_in                                  ;
+; elv2_dir[1]                                                              ; Stuck at VCC due to stuck port data_in                                  ;
+; direction_state_dot_matrix:md_elv_directions|elv1_prev_dir[0]            ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[17,18]                  ; Stuck at VCC due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[16]                     ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[15]                     ; Stuck at VCC due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[14]                     ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[13]                     ; Stuck at VCC due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[11,12]                  ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[9,10]                   ; Stuck at VCC due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[0..8]                   ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[19]                     ; Stuck at VCC due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_count[20..29]                 ; Stuck at GND due to stuck port clock_enable                             ;
+; spin_elevator_step_motor:md_elv_spin|motor_out[0..3]                     ; Stuck at GND due to stuck port clock_enable                             ;
+; elv1_floor[4]                                                            ; Stuck at GND due to stuck port clock_enable                             ;
+; elv2_floor[4]                                                            ; Stuck at GND due to stuck port clock_enable                             ;
+; elv1_floor[1,2]                                                          ; Stuck at GND due to stuck port data_in                                  ;
+; elv2_floor[1..3]                                                         ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_b[0]                              ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_c[24]                             ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[0,10,16]                        ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[10,16,24]                       ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_c[0,10,16]                        ; Stuck at GND due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_d[10,16,24]                       ; Stuck at GND due to stuck port data_in                                  ;
+; elv1_stop_list[2..7]                                                     ; Lost fanout                                                             ;
+; elv2_stop_list[2..8]                                                     ; Lost fanout                                                             ;
+; sched_target                                                             ; Stuck at GND due to stuck port data_in                                  ;
+; direction_state_dot_matrix:md_elv_directions|elv2_prev_dir[0]            ; Stuck at GND due to stuck port data_in                                  ;
+; elv1_floor[0,3]                                                          ; Stuck at VCC due to stuck port data_in                                  ;
+; elv2_floor[0]                                                            ; Stuck at VCC due to stuck port data_in                                  ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[0]                              ; Stuck at GND due to stuck port sload                                    ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[24]                             ; Stuck at GND due to stuck port data_in                                  ;
+; elv1_stop_list[0,1]                                                      ; Lost fanout                                                             ;
+; elv2_stop_list[0]                                                        ; Lost fanout                                                             ;
+; draw_elevator_text_lcd:md_elv_draw|reg_d[0]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_f[0]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_d[5]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_h[5]                 ;
+; draw_elevator_text_lcd:md_elv_draw|reg_h[5]                              ; Merged with draw_elevator_text_lcd:md_elv_draw|reg_e[5]                 ;
 ; elevator_control_push_btns:md_elv_control|prev_what_button~2             ; Lost fanout                                                             ;
 ; elevator_control_push_btns:md_elv_control|prev_what_button~3             ; Lost fanout                                                             ;
 ; elevator_control_push_btns:md_elv_control|prev_what_button~4             ; Lost fanout                                                             ;
@@ -400,19 +436,79 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; draw_elevator_text_lcd:md_elv_draw|lcd_mode~6                            ; Lost fanout                                                             ;
 ; elevator_control_push_btns:md_elv_control|destination_reg.00001          ; Lost fanout                                                             ;
 ; elevator_control_push_btns:md_elv_control|current_reg.00001              ; Lost fanout                                                             ;
-; Total Number of Removed Registers = 338                                  ;                                                                         ;
+; direction_state_dot_matrix:md_elv_directions|dot_raw_reg[2]              ; Merged with direction_state_dot_matrix:md_elv_directions|dot_raw_reg[0] ;
+; elv2_stop_list[1]                                                        ; Stuck at GND due to stuck port data_in                                  ;
+; elv2_stop_count[0..3]                                                    ; Stuck at GND due to stuck port clock_enable                             ;
+; elv1_stop_count[3]                                                       ; Stuck at GND due to stuck port data_in                                  ;
+; elv2_dir[0]                                                              ; Stuck at VCC due to stuck port data_in                                  ;
+; elv1_stop_count[2]                                                       ; Stuck at GND due to stuck port data_in                                  ;
+; Total Number of Removed Registers = 363                                  ;                                                                         ;
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; cnt2[6]       ; Lost Fanouts              ; clk_out, cnt2[7], cnt2[8], cnt2[9]     ;
-; elv1_dir[1]   ; Stuck at GND              ; clk_out2                               ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++---------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++---------------+---------------------------+---------------------------------------------------------------------------------+
+; elv1_dir[1]   ; Stuck at VCC              ; spin_elevator_step_motor:md_elv_spin|motor_count[18],                           ;
+;               ; due to stuck port data_in ; spin_elevator_step_motor:md_elv_spin|motor_count[17],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[16],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[15],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[14],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[13],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[12],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[11],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[10],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[9],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[8],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[7],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[6],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[5],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[4],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[3],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[2],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[1],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[0],                            ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[19],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[20],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[21],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[22],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[23],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[24],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[25],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[26],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[27],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[28],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_count[29],                           ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_out[0],                              ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_out[1],                              ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_out[2],                              ;
+;               ;                           ; spin_elevator_step_motor:md_elv_spin|motor_out[3], elv1_floor[4],               ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_g[16],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_g[10],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_g[0],                                    ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_h[24],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_h[16],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_h[10], sched_target,                     ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_h[0],                                    ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_g[24]                                    ;
+; elv2_dir[1]   ; Stuck at VCC              ; elv2_floor[4], elv2_floor[2], elv2_floor[3],                                    ;
+;               ; due to stuck port data_in ; draw_elevator_text_lcd:md_elv_draw|reg_b[0],                                    ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_c[24],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_c[16],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_c[10],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_c[0],                                    ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_d[24],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_d[16],                                   ;
+;               ;                           ; draw_elevator_text_lcd:md_elv_draw|reg_d[10], elv2_stop_list[8]                 ;
+; elv2_floor[1] ; Stuck at GND              ; elv2_stop_count[3], elv2_stop_count[2], elv2_stop_count[1], elv2_stop_count[0], ;
+;               ; due to stuck port data_in ; elv2_dir[0]                                                                     ;
+; curr[4]       ; Stuck at GND              ; prev_curr[4], prev_dest[4], elv2_stop_list[1]                                   ;
+;               ; due to stuck port data_in ;                                                                                 ;
+; elv1_floor[1] ; Stuck at GND              ; elv1_stop_count[3], elv1_stop_count[2]                                          ;
+;               ; due to stuck port data_in ;                                                                                 ;
++---------------+---------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -420,37 +516,32 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 257   ;
-; Number of registers using Synchronous Clear  ; 66    ;
-; Number of registers using Synchronous Load   ; 30    ;
+; Total registers                              ; 279   ;
+; Number of registers using Synchronous Clear  ; 104   ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 121   ;
+; Number of registers using Clock Enable       ; 103   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------+
-; Inverted Register Statistics                                   ;
-+------------------------------------------------------+---------+
-; Inverted Register                                    ; Fan out ;
-+------------------------------------------------------+---------+
-; elevator_control_push_btns:md_elv_control|led_sx[4]  ; 1       ;
-; elevator_control_push_btns:md_elv_control|led_sx[5]  ; 1       ;
-; elevator_control_push_btns:md_elv_control|led_sx[6]  ; 1       ;
-; elevator_control_push_btns:md_elv_control|led_sx[7]  ; 1       ;
-; elv1_floor[0]                                        ; 11      ;
-; elv1_floor[3]                                        ; 12      ;
-; elv2_floor[0]                                        ; 11      ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[17] ; 2       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[18] ; 3       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[15] ; 4       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[13] ; 4       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[9]  ; 3       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[19] ; 3       ;
-; spin_elevator_step_motor:md_elv_spin|motor_count[10] ; 3       ;
-; Total number of inverted registers = 14              ;         ;
-+------------------------------------------------------+---------+
++---------------------------------------------------------------+
+; Inverted Register Statistics                                  ;
++-----------------------------------------------------+---------+
+; Inverted Register                                   ; Fan out ;
++-----------------------------------------------------+---------+
+; elevator_control_push_btns:md_elv_control|led_sx[4] ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[5] ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[6] ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[7] ; 1       ;
+; elv1_dir[0]                                         ; 9       ;
+; curr[0]                                             ; 4       ;
+; dest[0]                                             ; 4       ;
+; prev_curr[0]                                        ; 1       ;
+; prev_dest[0]                                        ; 1       ;
+; Total number of inverted registers = 9              ;         ;
++-----------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -458,19 +549,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|dot_clk_count[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|dot_clk_count[2] ;
 ; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[23]           ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|cnt[12]          ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|count_lcd[0]               ;
-; 16:1               ; 17 bits   ; 170 LEs       ; 102 LEs              ; 68 LEs                 ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|dot_raw_reg[0]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin|motor_out[3]             ;
-; 17:1               ; 9 bits    ; 99 LEs        ; 54 LEs               ; 45 LEs                 ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|reg_c[24]                  ;
-; 17:1               ; 9 bits    ; 99 LEs        ; 54 LEs               ; 45 LEs                 ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|reg_g[24]                  ;
-; 34:1               ; 7 bits    ; 154 LEs       ; 42 LEs               ; 112 LEs                ; Yes        ; |elevator_simulator|floor_seven_segment:md_elv_floors|segout_tmp[2]               ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|cnt[7]           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |elevator_simulator|elv1_floor[4]                                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|elv2_floor[3]                                                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|count_lcd[13]              ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 20 LEs               ; 35 LEs                 ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|dot_col_reg[2]   ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions|dot_col_reg[9]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin|motor_out[1]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin|motor_out[3]             ;
+; 33:1               ; 9 bits    ; 198 LEs       ; 54 LEs               ; 144 LEs                ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|reg_g[24]                  ;
+; 33:1               ; 9 bits    ; 198 LEs       ; 54 LEs               ; 144 LEs                ; Yes        ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|reg_c[24]                  ;
+; 66:1               ; 7 bits    ; 308 LEs       ; 42 LEs               ; 266 LEs                ; Yes        ; |elevator_simulator|floor_seven_segment:md_elv_floors|segout_tmp[4]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |elevator_simulator|elv1_floor[0]                                                 ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |elevator_simulator|floor_seven_segment:md_elv_floors|com_cnt                     ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |elevator_simulator|elevator_control_push_btns:md_elv_control|current_reg         ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |elevator_simulator|elevator_control_push_btns:md_elv_control|destination_reg     ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |elevator_simulator|elevator_control_push_btns:md_elv_control|__what_button.01001 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |elevator_simulator|elv1_dir                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |elevator_simulator|elv2_dir                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |elevator_simulator|get_weight                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |elevator_simulator|get_weight                                                    ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |elevator_simulator|elevator_control_push_btns:md_elv_control|__what_button.00000 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
@@ -489,7 +589,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 20 03:48:10 2014
+    Info: Processing started: Fri Jun 20 06:48:04 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elevator_simulator -c elevator_simulator
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (10335): Unrecognized synthesis attribute "tool" at elevator_simulator.v(12)
@@ -506,11 +606,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file spin_el
 Info (12021): Found 1 design units, including 1 entities, in source file elevator_control_push_btns.v
     Info (12023): Found entity 1: elevator_control_push_btns
 Info (12127): Elaborating entity "elevator_simulator" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(63): object "elv_count" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(54): object "cnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(54): object "cnt2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(55): object "clk_out" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(55): object "clk_out2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(71): object "prev_sched_target" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(190): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(345): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(211): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(214): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(229): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(250): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(253): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(329): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(333): truncated value with size 5 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(308): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(360): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(312): truncated value with size 32 to match size of target (5)
+Warning (10776): Verilog HDL warning at elevator_simulator.v(300): variable get_weight in static task or function get_weight may have unintended latch behavior
+Warning (10241): Verilog HDL Function Declaration warning at elevator_simulator.v(300): function "get_weight" may return a Don't Care value because its output register may not be assigned a value in every possible path through the function
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(320): truncated value with size 32 to match size of target (1)
+Warning (10030): Net "get_weight" at elevator_simulator.v(300) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "floor_seven_segment" for hierarchy "floor_seven_segment:md_elv_floors"
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(46): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(51): truncated value with size 32 to match size of target (15)
 Info (12128): Elaborating entity "direction_state_dot_matrix" for hierarchy "direction_state_dot_matrix:md_elv_directions"
+Warning (10855): Verilog HDL warning at direction_state_dot_matrix.v(28): initial value for variable elv1_prev_dir should be constant
+Warning (10855): Verilog HDL warning at direction_state_dot_matrix.v(28): initial value for variable elv2_prev_dir should be constant
 Info (12128): Elaborating entity "draw_elevator_text_lcd" for hierarchy "draw_elevator_text_lcd:md_elv_draw"
 Warning (10036): Verilog HDL or VHDL warning at draw_elevator_text_lcd.v(29): object "reg_i" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at draw_elevator_text_lcd.v(30): object "reg_j" assigned a value but never read
@@ -600,19 +722,23 @@ Warning (13012): Latch draw_elevator_text_lcd:md_elv_draw|set_data[7] has unsafe
     Warning (13013): Ports D and ENA on the latch are fed by the same signal draw_elevator_text_lcd:md_elv_draw|lcd_mode.00111
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND
-Info (17049): 90 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "motor_out[0]" is stuck at GND
+    Warning (13410): Pin "motor_out[1]" is stuck at GND
+    Warning (13410): Pin "motor_out[2]" is stuck at GND
+    Warning (13410): Pin "motor_out[3]" is stuck at GND
+Info (17049): 38 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/GitHub/ElevatorMoveTest/output_files/elevator_simulator.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 649 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 632 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 63 output pins
-    Info (21061): Implemented 575 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 81 warnings
+    Info (21061): Implemented 558 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 107 warnings
     Info: Peak virtual memory: 443 megabytes
-    Info: Processing ended: Fri Jun 20 03:48:12 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Fri Jun 20 06:48:07 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
