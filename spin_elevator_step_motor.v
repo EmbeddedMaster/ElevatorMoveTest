@@ -17,7 +17,7 @@ module spin_elevator_step_motor(clk, motor_out, elv1_dir);
 	
 	always@(posedge clk)
 	begin
-		if(elv1_dir !=2)
+		if(elv1_dir < 2)
 		begin
 			if(motor_count == 30'd960000)
 			begin
