@@ -54,6 +54,8 @@ module elevator_simulator(
 	reg[32:0] cnt,cnt2; 
 	reg clk_out,clk_out2; 
 	
+	reg[63:0] count;
+	
 	//manipulating elevator
 	wire[4:0] __current;
 	wire[4:0] __destination;
@@ -64,10 +66,11 @@ module elevator_simulator(
 	
 	reg[4:0] elv1_floor, elv2_floor;
 	reg[1:0] elv1_dir, elv2_dir;
+	reg[3:0] elv1_stop_count, elv2_stop_count;
 	reg[8:0] elv1_stop_list, elv2_stop_list;
 	
-	reg[4:0] dest;
-	reg sched_target;
+	reg[4:0] curr, dest, prev_curr, prev_dest;
+	reg sched_target, prev_sched_target;
 	
 	//7-segment. presentate floor
 	floor_seven_segment md_elv_floors
@@ -129,114 +132,187 @@ module elevator_simulator(
 		clk_out 	= 0;
 		clk_out2 	= 0;
 		
+		count = 0;
+		
 		//elvator
 		elv_count = 0;
-		elv1_floor = 9;
-		elv2_floor = 1;
-		elv1_dir = 1'b0;
-		elv2_dir = 1'b1;
+		elv1_floor = 1;
+		elv2_floor = 9;
+		elv1_dir = 1'b1;
+		elv2_dir = 1'b0;
+		elv1_stop_count = 0;
+		elv2_stop_count = 0;
 		
 		elv1_stop_list = 0;
 		elv2_stop_list = 0;
+		
+		curr = 0;
+		dest = 0;
+		prev_curr = 0;
+		prev_dest = 0;
+		
+		sched_target = 0;
+		prev_sched_target = 0;
 	end
 
 	always @(posedge clk_in)
 	begin
-		if (resetn == 0)
-		begin
-			cnt = 0; 
-			clk_out = 0;
+		if (count < 64'd36000000) begin
+			count = count + 1; 
 		end
-		else if (cnt < 5999)
-		begin
-			cnt = cnt + 1; 
-		end
-		else if (cnt == 5999)
-		begin
-			cnt = 0; 
-			clk_out = ~clk_out; 
-		end 
-	end
-
-	always @(posedge clk_out)
-	begin
-		if (resetn == 0)
-			begin
-				cnt2 = 0; 
-				clk_out2 = 0;
+		else begin
+			count = 0;
+			
+			/****** elevator1 ******/
+			//check stop list (check arrival)
+			if(elv1_stop_list[elv1_floor]==1) begin
+				if(elv1_stop_count >= 3) begin
+					elv1_stop_list[elv1_floor] = 0;
+					elv1_stop_count = 0;
+				end
+				else begin
+					elv1_stop_count = elv1_stop_count + 1;
+					elv1_dir = 2;
+				end
 			end
-		else if (cnt2 < 1000)
-			begin
-				cnt2 = cnt2 + 1; 
-			end
-		else if (cnt2 == 1000)
-			begin
-				cnt2 = 0; 
-				clk_out2 = ~clk_out2; 
-			end 
-	end
-	   
-	always @(posedge clk_out2)
-	begin
-		if (resetn == 0)
-			begin
-				//elv1_floor = 9;
-				//elv2_floor = 1;
-				elv1_dir = 1'b0;
-				elv2_dir = 1'b1;
-			end
-		else
-			begin
-				/*if(elv2_dir==1'b0)
-					begin
-						elv2_floor = elv2_floor - 1;
+			else begin
+				//check dir
+				if(get_max_floor(elv1_stop_list) == 0) begin	//check stop list is empty
+					elv1_dir = 3;
+				end
+				else begin
+					if((get_max_floor(elv1_stop_list)-curr)<0) begin
+						elv1_dir = 1'b0;
 					end
-				else
-					begin
-						elv2_floor = elv2_floor + 1;
-					end
-				
-				elv1_floor = 10 - elv2_floor;
-				
-				if(elv2_floor == 9)
-					begin
+					else begin
 						elv1_dir = 1'b1;
+					end
+				end
+			end
+			
+			//move
+			if(elv1_dir == 2'b1) begin
+				elv1_floor = elv1_floor + 1;
+			end
+			else if (elv1_dir == 2'b0) begin
+				elv1_floor = elv1_floor - 1;
+			end
+			else begin
+			end
+			
+			
+			
+			/****** elevator2 ******/
+			//check stop list
+			if(elv2_stop_list[elv2_floor]==1) begin
+				if(elv2_stop_count >= 3) begin
+					elv2_stop_list[elv2_floor] = 0;
+					elv2_stop_count = 0;
+				end
+				else begin
+					elv2_stop_count = elv2_stop_count + 1;
+					elv2_dir = 2;
+				end
+			end
+			else begin
+				//check dir
+				if(get_max_floor(elv2_stop_list) == 0) begin	//check stop list is empty
+					elv2_dir = 3;
+				end
+				else begin
+					if((get_max_floor(elv2_stop_list)-curr)<0) begin
 						elv2_dir = 1'b0;
 					end
-				else if(elv2_floor == 1)
-					begin
-						elv1_dir = 1'b0;
+					else begin
 						elv2_dir = 1'b1;
-					end*/
-					
-				//elv1_floor = __current;
-				//elv2_floor = __destination;
-        	end
+					end
+				end
+			end
 			
+			//move
+			if(elv2_dir == 2'b1) begin
+				elv2_floor = elv2_floor + 1;
+			end
+			else if (elv2_dir == 2'b0) begin
+				elv2_floor = elv2_floor - 1;
+			end
+			else begin
+			end
+			
+			
+			
+			
+			//do someting...	(here is 1sec clk out)
+			/*if(elv2_dir==1'b0) begin
+				elv2_floor = elv2_floor - 1;
+			end
+			else begin
+				elv2_floor = elv2_floor + 1;
+			end
+			
+			elv1_floor = 10 - elv2_floor;
+			
+			if(elv2_floor == 9) begin
+				elv1_dir = 1'b1;
+				elv2_dir = 1'b0;
+			end
+			else if(elv2_floor == 1) begin
+				elv1_dir = 1'b0;
+				elv2_dir = 1'b1;
+			end*/
+				
+		end 
+		
+		//do something posedge cpu clock
+		
+		
+		
+		
+		if((prev_curr != curr) && (prev_dest != dest)) begin
+			if(sched_target == 0)
+			begin
+				elv1_stop_list[curr] = 1;
+				elv1_stop_list[dest] = 1;
+			end
+			else if(sched_target == 1)
+			begin
+				elv2_stop_list[curr] = 1;
+				elv2_stop_list[dest] = 1;
+			end
+			
+			prev_curr = curr;
+			prev_dest = dest;
+		end
 	end
+
+
 	
 	always @(posedge input_confirm)
 	begin
-		sched_target = min(get_weight(elv1_stop_list, __current, __destination, elv1_dir),
-								 get_weight(elv2_stop_list, __current, __destination, elv2_dir));
+		sched_target = min(get_weight(elv1_stop_list, elv1_floor, __current, elv1_dir),
+								 get_weight(elv2_stop_list, elv2_floor, __current, elv2_dir));
+		
+		curr = __current;
 		dest = __destination;
+		
 		//elv1_floor = __current;
 		//elv2_floor = __destination;
 	end
 
+	
 	function [4:0] get_weight;
 		input [8:0] stop_list;
+		input [4:0] floor;
 		input [4:0] current;
-		input [4:0] destination;
 		input [1:0] direction;
 	begin
 		if(direction == 1)
 		begin
-			get_weight = 2*(get_max_floor(stop_list)-current) + abs(destination - current); 
+			get_weight = 2*(get_max_floor(stop_list)-floor) + abs(current - floor); 
 		end
 		else if(direction == 0)
 		begin
-			get_weight = 2*(current-get_min_floor(stop_list)) + abs(destination-current);
+			get_weight = 2*(current-get_min_floor(stop_list)) + abs(current-floor);
 		end
 	end
 	endfunction
@@ -271,6 +347,9 @@ module elevator_simulator(
 			if(stop_list[i] == 1)
 				get_max_floor = i;
 		end
+		
+		//stop_list is empty
+		get_max_floor = 0;
 	end
 	endfunction
 	
@@ -283,6 +362,9 @@ module elevator_simulator(
 			if(stop_list[i]==1)
 				get_min_floor = i;
 		end
+		
+		//stop_list is empty
+		get_min_floor = 0;
 	end
 	endfunction
 	
