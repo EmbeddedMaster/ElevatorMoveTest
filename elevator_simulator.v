@@ -18,10 +18,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-`define lcd_0 8'b00110000
-`define lcd_o 8'b01001111
-`define lcd_s_o 8'b01101111
-`define lcd_ev ldc_o
+
 
 module elevator_simulator(
 	clk_in, resetn,
@@ -45,8 +42,6 @@ module elevator_simulator(
 	output[7:0] lcd_data;
 	
 	
-	//text lcd
-	
 	//clk_out counting
 	reg[32:0] cnt,cnt2; 
 	reg clk_out,clk_out2; 
@@ -58,7 +53,7 @@ module elevator_simulator(
 	reg[1:0] elv1_dir, elv2_dir;
 	
 	//7-segment. presentate floor
-	floor_seven_segment m_elv_floors
+	floor_seven_segment md_elv_floors
 	(
 		.clk				(clk_in), 
 		.segout			(segout), 
@@ -67,7 +62,8 @@ module elevator_simulator(
 		.elv2_floor		(elv2_floor)
 	);
 	
-	direction_state_dot_matrix
+	//dot-matrix. presentate direction
+	direction_state_dot_matrix md_elv_directions
 	(
 		.clk			(clk_in),
 		.resetn		(resetn),
@@ -75,6 +71,19 @@ module elevator_simulator(
 		.dot_raw		(dot_raw),
 		.elv1_dir	(elv1_dir),
 		.elv2_dir	(elv2_dir)
+	);
+	
+	//text-lcd. draw elevator (with floor)
+	draw_elevator_text_lcd md_elv_draw
+	(
+		.clk				(clk_in),
+		.resetn			(resetn),
+		.lcd_rs			(lcd_rs),
+		.lcd_rw			(lcd_rw),
+		.lcd_en			(lcd_en),
+		.lcd_data		(lcd_data),
+		.elv1_floor		(elv1_floor),
+		.elv2_floor		(elv2_floor)
 	);
 	
 	initial

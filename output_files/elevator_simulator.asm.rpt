@@ -1,5 +1,5 @@
 Assembler report for elevator_simulator
-Thu Jun 19 20:08:58 2014
+Thu Jun 19 21:11:19 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Jun 19 20:08:58 2014 ;
+; Assembler Status      ; Successful - Thu Jun 19 21:11:19 2014 ;
 ; Revision Name         ; elevator_simulator                    ;
 ; Top-level Entity Name ; elevator_simulator                    ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                 ;
 +----------------+-------------------------------------------------------------------------+
 ; Device         ; EP2C50F672C8                                                            ;
-; JTAG usercode  ; 0x004A4937                                                              ;
-; Checksum       ; 0x004A4937                                                              ;
+; JTAG usercode  ; 0x004C6CF3                                                              ;
+; Checksum       ; 0x004C6CF3                                                              ;
 +----------------+-------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+---------------------------------------------------------------------+
 ; Device             ; EPCS16                                                              ;
 ; JTAG usercode      ; 0x00000000                                                          ;
-; Checksum           ; 0x1AEAA174                                                          ;
+; Checksum           ; 0x1AE3BB63                                                          ;
 ; Compression Ratio  ; 3                                                                   ;
 +--------------------+---------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jun 19 20:08:55 2014
+    Info: Processing started: Thu Jun 19 21:11:17 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off elevator_simulator -c elevator_simulator
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 435 megabytes
-    Info: Processing ended: Thu Jun 19 20:08:58 2014
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Thu Jun 19 21:11:19 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 
 

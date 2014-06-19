@@ -1,0 +1,8 @@
+`define lcd_0 8'b00110000
+`define lcd_o 8'b01001111
+`define lcd_s_o 8'b01101111
+`define lcd_ev ldc_o
+
+module draw_elevator_text_lcd()
+
+endmodule
