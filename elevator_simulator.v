@@ -25,7 +25,8 @@ module elevator_simulator(
 	dot_col, dot_raw,			//dot matrix
 	segout, segcom,			//7-segment
 	lcd_rs, lcd_rw, lcd_en, lcd_data,		//text lcd
-	motor_out	//motor_out
+	motor_out,	//motor_out
+	push_btns
 );
 
 	input clk_in;
@@ -44,9 +45,17 @@ module elevator_simulator(
 	
 	output [3:0] motor_out;
 	
+	input[8:0] push_btns;
+	
 	//clk_out counting
 	reg[32:0] cnt,cnt2; 
 	reg clk_out,clk_out2; 
+	
+	
+	//manipulatin elevator
+	wire[4:0] __current;
+	wire[4:0] __destination;
+	wire input_confirm;
 	
 	//About elevator info
 	reg[7:0] elv_count;
@@ -89,13 +98,21 @@ module elevator_simulator(
 	);
 	
 	//motor, spin motor (elevator1 direction)
-	spin_elevator_step_motor
+	spin_elevator_step_motor md_elv_spin
 	(
 		.clk			(clk_in),
 		.motor_out	(motor_out),
 		.elv1_dir	(elv1_dir)
-		);
+	);
 	
+	elevator_control_push_btns md_elv_control
+	(
+		.clk				(clk_in),
+		.push_btns		(push_btns),
+		.current			(__current),
+		.destination	(__destination),
+		.input_confirm	(input_confirm)
+	);
 	
 	initial
 	begin
@@ -149,7 +166,7 @@ module elevator_simulator(
 			end 
 	end
 	   
-	always@(posedge clk_out2)
+	always @(posedge clk_out2)
 	begin
 		if (resetn == 0)
 			begin
@@ -160,7 +177,7 @@ module elevator_simulator(
 			end
 		else
 			begin
-				if(elv2_dir==1'b0)
+				/*if(elv2_dir==1'b0)
 					begin
 						elv2_floor = elv2_floor - 1;
 					end
@@ -180,8 +197,18 @@ module elevator_simulator(
 					begin
 						elv1_dir = 1'b0;
 						elv2_dir = 1'b1;
-					end
+					end*/
+					
+				elv1_floor = __current;
+				elv2_floor = __destination;
         	end
+			
+	end
+	
+	always @(posedge input_confirm)
+	begin
+		//elv1_floor = current;
+		//elv2_floor = destination;
 	end
 
 endmodule

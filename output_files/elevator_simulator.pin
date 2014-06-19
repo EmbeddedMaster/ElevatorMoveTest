@@ -164,8 +164,8 @@ segcom[3]                    : AC17      : output : 3.3-V LVTTL       :         
 segcom[2]                    : AC18      : output : 3.3-V LVTTL       :         : 7         : Y              
 segcom[1]                    : AC19      : output : 3.3-V LVTTL       :         : 7         : Y              
 segcom[0]                    : AC20      : output : 3.3-V LVTTL       :         : 7         : Y              
-GND*                         : AC21      :        :                   :         : 7         :                
-GND*                         : AC22      :        :                   :         : 7         :                
+push_btns[0]                 : AC21      : input  : 3.3-V LVTTL       :         : 7         : Y              
+push_btns[1]                 : AC22      : input  : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AC23      :        :                   :         : 6         :                
 GND*                         : AC24      :        :                   :         : 6         :                
 GND*                         : AC25      :        :                   :         : 6         :                
@@ -184,15 +184,15 @@ dot_col[3]                   : AD11      : output : 3.3-V LVTTL       :         
 dot_col[4]                   : AD12      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND+                         : AD13      :        :                   :         : 8         :                
 GND                          : AD14      : gnd    :                   :         :           :                
-GND*                         : AD15      :        :                   :         : 7         :                
-GND*                         : AD16      :        :                   :         : 7         :                
-GND*                         : AD17      :        :                   :         : 7         :                
+push_btns[2]                 : AD15      : input  : 3.3-V LVTTL       :         : 7         : Y              
+push_btns[3]                 : AD16      : input  : 3.3-V LVTTL       :         : 7         : Y              
+push_btns[4]                 : AD17      : input  : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : AD18      : gnd    :                   :         :           :                
-GND*                         : AD19      :        :                   :         : 7         :                
+push_btns[5]                 : AD19      : input  : 3.3-V LVTTL       :         : 7         : Y              
 VCCIO7                       : AD20      : power  :                   : 3.3V    : 7         :                
-GND*                         : AD21      :        :                   :         : 7         :                
-GND*                         : AD22      :        :                   :         : 7         :                
-GND*                         : AD23      :        :                   :         : 7         :                
+push_btns[6]                 : AD21      : input  : 3.3-V LVTTL       :         : 7         : Y              
+push_btns[7]                 : AD22      : input  : 3.3-V LVTTL       :         : 7         : Y              
+push_btns[8]                 : AD23      : input  : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AD24      :        :                   :         : 6         :                
 GND*                         : AD25      :        :                   :         : 6         :                
 VCCIO6                       : AD26      : power  :                   : 3.3V    : 6         :                

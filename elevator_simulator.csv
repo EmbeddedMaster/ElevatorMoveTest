@@ -14,7 +14,7 @@
 
 # Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 # File: C:\GitHub\ElevatorMoveTest\elevator_simulator.csv
-# Generated on: Thu Jun 19 22:17:54 2014
+# Generated on: Thu Jun 19 23:47:05 2014
 
 # Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
 
@@ -55,10 +55,19 @@ lcd_data[0],Output,PIN_AB10,8,B8_N1,PIN_AB10,,,,
 lcd_en,Output,PIN_AA9,8,B8_N1,PIN_AA9,,,,
 lcd_rs,Output,PIN_Y11,8,B8_N1,PIN_Y11,,,,
 lcd_rw,Output,PIN_Y12,8,B8_N0,PIN_Y12,,,,
-motor_out[3],Output,PIN_AB8,8,B8_N1,PIN_C12,,,,
-motor_out[2],Output,PIN_AA12,8,B8_N0,PIN_B11,,,,
-motor_out[1],Output,PIN_AA11,8,B8_N1,PIN_B12,,,,
-motor_out[0],Output,PIN_AA10,8,B8_N1,PIN_C11,,,,
+motor_out[3],Output,PIN_AB8,8,B8_N1,PIN_AB8,,,,
+motor_out[2],Output,PIN_AA12,8,B8_N0,PIN_AA12,,,,
+motor_out[1],Output,PIN_AA11,8,B8_N1,PIN_AA11,,,,
+motor_out[0],Output,PIN_AA10,8,B8_N1,PIN_AA10,,,,
+push_btns[8],Input,PIN_AD23,7,B7_N0,PIN_D11,,,,
+push_btns[7],Input,PIN_AD22,7,B7_N0,PIN_R6,,,,
+push_btns[6],Input,PIN_AD21,7,B7_N0,PIN_J20,,,,
+push_btns[5],Input,PIN_AD19,7,B7_N0,PIN_P3,,,,
+push_btns[4],Input,PIN_AD17,7,B7_N1,PIN_H17,,,,
+push_btns[3],Input,PIN_AD16,7,B7_N1,PIN_AE5,,,,
+push_btns[2],Input,PIN_AD15,7,B7_N1,PIN_P24,,,,
+push_btns[1],Input,PIN_AC22,7,B7_N0,PIN_A6,,,,
+push_btns[0],Input,PIN_AC21,7,B7_N0,PIN_F20,,,,
 resetn,Input,PIN_P6,1,B1_N0,PIN_P6,,,,
 segcom[7],Output,PIN_AB20,7,B7_N0,PIN_AB20,,,,
 segcom[6],Output,PIN_AB21,7,B7_N0,PIN_AB21,,,,
