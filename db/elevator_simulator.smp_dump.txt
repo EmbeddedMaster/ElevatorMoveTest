@@ -1,4 +1,43 @@
 
+State Machine - |elevator_simulator|elevator_control_push_btns:md_elv_control|prev_what_button
+Name prev_what_button.01001 prev_what_button.01000 prev_what_button.00111 prev_what_button.00110 prev_what_button.00101 prev_what_button.00100 prev_what_button.00011 prev_what_button.00010 prev_what_button.00000 prev_what_button.00001 
+prev_what_button.00001 0 0 0 0 0 0 0 0 0 0 
+prev_what_button.00000 0 0 0 0 0 0 0 0 1 1 
+prev_what_button.00010 0 0 0 0 0 0 0 1 0 1 
+prev_what_button.00011 0 0 0 0 0 0 1 0 0 1 
+prev_what_button.00100 0 0 0 0 0 1 0 0 0 1 
+prev_what_button.00101 0 0 0 0 1 0 0 0 0 1 
+prev_what_button.00110 0 0 0 1 0 0 0 0 0 1 
+prev_what_button.00111 0 0 1 0 0 0 0 0 0 1 
+prev_what_button.01000 0 1 0 0 0 0 0 0 0 1 
+prev_what_button.01001 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |elevator_simulator|elevator_control_push_btns:md_elv_control|destination_reg
+Name destination_reg.01001 destination_reg.01000 destination_reg.00111 destination_reg.00110 destination_reg.00101 destination_reg.00100 destination_reg.00011 destination_reg.00010 destination_reg.00001 destination_reg.00000 
+destination_reg.00000 0 0 0 0 0 0 0 0 0 0 
+destination_reg.00001 0 0 0 0 0 0 0 0 1 1 
+destination_reg.00010 0 0 0 0 0 0 0 1 0 1 
+destination_reg.00011 0 0 0 0 0 0 1 0 0 1 
+destination_reg.00100 0 0 0 0 0 1 0 0 0 1 
+destination_reg.00101 0 0 0 0 1 0 0 0 0 1 
+destination_reg.00110 0 0 0 1 0 0 0 0 0 1 
+destination_reg.00111 0 0 1 0 0 0 0 0 0 1 
+destination_reg.01000 0 1 0 0 0 0 0 0 0 1 
+destination_reg.01001 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |elevator_simulator|elevator_control_push_btns:md_elv_control|current_reg
+Name current_reg.01001 current_reg.01000 current_reg.00111 current_reg.00110 current_reg.00101 current_reg.00100 current_reg.00011 current_reg.00010 current_reg.00001 current_reg.00000 
+current_reg.00000 0 0 0 0 0 0 0 0 0 0 
+current_reg.00001 0 0 0 0 0 0 0 0 1 1 
+current_reg.00010 0 0 0 0 0 0 0 1 0 1 
+current_reg.00011 0 0 0 0 0 0 1 0 0 1 
+current_reg.00100 0 0 0 0 0 1 0 0 0 1 
+current_reg.00101 0 0 0 0 1 0 0 0 0 1 
+current_reg.00110 0 0 0 1 0 0 0 0 0 1 
+current_reg.00111 0 0 1 0 0 0 0 0 0 1 
+current_reg.01000 0 1 0 0 0 0 0 0 0 1 
+current_reg.01001 1 0 0 0 0 0 0 0 0 1 
+
 State Machine - |elevator_simulator|draw_elevator_text_lcd:md_elv_draw|lcd_mode
 Name lcd_mode.01100 lcd_mode.01011 lcd_mode.01010 lcd_mode.01001 lcd_mode.01000 lcd_mode.00111 lcd_mode.00110 lcd_mode.00101 lcd_mode.00100 lcd_mode.00011 lcd_mode.00010 lcd_mode.00001 lcd_mode.00000 
 lcd_mode.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 

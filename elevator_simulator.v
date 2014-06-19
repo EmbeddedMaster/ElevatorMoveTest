@@ -170,8 +170,8 @@ module elevator_simulator(
 	begin
 		if (resetn == 0)
 			begin
-				elv1_floor = 9;
-				elv2_floor = 1;
+				//elv1_floor = 9;
+				//elv2_floor = 1;
 				elv1_dir = 1'b0;
 				elv2_dir = 1'b1;
 			end
@@ -199,16 +199,16 @@ module elevator_simulator(
 						elv2_dir = 1'b1;
 					end*/
 					
-				elv1_floor = __current;
-				elv2_floor = __destination;
+				//elv1_floor = __current;
+				//elv2_floor = __destination;
         	end
 			
 	end
 	
 	always @(posedge input_confirm)
 	begin
-		//elv1_floor = current;
-		//elv2_floor = destination;
+		elv1_floor = __current;
+		elv2_floor = __destination;
 	end
 
 endmodule
