@@ -1,9 +1,11 @@
-module elevator_control_push_btns(clk, push_btns,
-											 current, destination, input_confirm);//,
-											 //input_confirm, check_new_btn_input);
+module elevator_control_push_btns(clk, push_btns, led_s,
+											 current, destination, input_confirm);
 
 	input clk;
 	input [8:0] push_btns;
+	
+	output [7:0] led_s;
+	reg [7:0] led_sx;
 	
 	output [4:0] current;
 	output [4:0] destination;
@@ -21,6 +23,8 @@ module elevator_control_push_btns(clk, push_btns,
 	assign current = current_reg;
 	assign destination = destination_reg;
 	
+	assign led_s = led_sx;
+	
 	initial
 	begin
 		current_reg = 9'b000000001;
@@ -30,6 +34,8 @@ module elevator_control_push_btns(clk, push_btns,
 		
 		input_confirm = 1'b0;
 		input_status = 1'b0;
+		
+		led_sx = 8'b11110000;
 	end
 	
 	assign __what_button = (push_btns == 9'b000000001) ? 1 :
@@ -51,12 +57,14 @@ module elevator_control_push_btns(clk, push_btns,
 			if (input_status == 1'b0) begin
 				current_reg = __what_button;
 				
+				led_sx = 8'b00001111;
 				input_status = 1'b1;
 				input_confirm = 1'b0;
 			end
 			else begin
 				destination_reg = __what_button;
 				
+				led_sx = 8'b11110000;
 				input_status = 1'b0;
 				input_confirm = 1'b1;	//generate posedge
 			end
@@ -64,7 +72,6 @@ module elevator_control_push_btns(clk, push_btns,
 		end
 		
 		prev_what_button = __what_button;
-		
 	end
 	
 endmodule

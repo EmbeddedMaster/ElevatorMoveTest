@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elevator_simulator
-Fri Jun 20 03:24:00 2014
+Fri Jun 20 03:48:12 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -51,16 +51,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 20 03:23:59 2014           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 20 03:48:12 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; elevator_simulator                              ;
 ; Top-level Entity Name              ; elevator_simulator                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 535                                             ;
-;     Total combinational functions  ; 511                                             ;
-;     Dedicated logic registers      ; 249                                             ;
-; Total registers                    ; 249                                             ;
-; Total pins                         ; 66                                              ;
+; Total logic elements               ; 543                                             ;
+;     Total combinational functions  ; 519                                             ;
+;     Dedicated logic registers      ; 257                                             ;
+; Total registers                    ; 257                                             ;
+; Total pins                         ; 74                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -183,28 +183,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 535    ;
+; Estimated Total logic elements              ; 543    ;
 ;                                             ;        ;
-; Total combinational functions               ; 511    ;
+; Total combinational functions               ; 519    ;
 ; Logic element usage by number of LUT inputs ;        ;
 ;     -- 4 input functions                    ; 252    ;
 ;     -- 3 input functions                    ; 76     ;
-;     -- <=2 input functions                  ; 183    ;
+;     -- <=2 input functions                  ; 191    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 383    ;
+;     -- normal mode                          ; 391    ;
 ;     -- arithmetic mode                      ; 128    ;
 ;                                             ;        ;
-; Total registers                             ; 249    ;
-;     -- Dedicated logic registers            ; 249    ;
+; Total registers                             ; 257    ;
+;     -- Dedicated logic registers            ; 257    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
-; I/O pins                                    ; 66     ;
+; I/O pins                                    ; 74     ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; clk_in ;
-; Maximum fan-out                             ; 220    ;
-; Total fan-out                               ; 2374   ;
-; Average fan-out                             ; 2.87   ;
+; Maximum fan-out                             ; 228    ;
+; Total fan-out                               ; 2414   ;
+; Average fan-out                             ; 2.84   ;
 +---------------------------------------------+--------+
 
 
@@ -213,10 +213,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
-; |elevator_simulator                               ; 511 (1)           ; 249 (8)      ; 0           ; 0            ; 0       ; 0         ; 66   ; 0            ; |elevator_simulator                                              ; work         ;
+; |elevator_simulator                               ; 519 (1)           ; 257 (8)      ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |elevator_simulator                                              ; work         ;
 ;    |direction_state_dot_matrix:md_elv_directions| ; 105 (105)         ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions ; work         ;
 ;    |draw_elevator_text_lcd:md_elv_draw|           ; 184 (184)         ; 75 (75)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw           ; work         ;
-;    |elevator_control_push_btns:md_elv_control|    ; 48 (48)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|elevator_control_push_btns:md_elv_control    ; work         ;
+;    |elevator_control_push_btns:md_elv_control|    ; 56 (56)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|elevator_control_push_btns:md_elv_control    ; work         ;
 ;    |floor_seven_segment:md_elv_floors|            ; 112 (112)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|floor_seven_segment:md_elv_floors            ; work         ;
 ;    |spin_elevator_step_motor:md_elv_spin|         ; 61 (61)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin         ; work         ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
@@ -420,12 +420,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 249   ;
+; Total registers                              ; 257   ;
 ; Number of registers using Synchronous Clear  ; 66    ;
 ; Number of registers using Synchronous Load   ; 30    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 113   ;
+; Number of registers using Clock Enable       ; 121   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -435,6 +435,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------+---------+
 ; Inverted Register                                    ; Fan out ;
 +------------------------------------------------------+---------+
+; elevator_control_push_btns:md_elv_control|led_sx[4]  ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[5]  ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[6]  ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[7]  ; 1       ;
 ; elv1_floor[0]                                        ; 11      ;
 ; elv1_floor[3]                                        ; 12      ;
 ; elv2_floor[0]                                        ; 11      ;
@@ -445,7 +449,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; spin_elevator_step_motor:md_elv_spin|motor_count[9]  ; 3       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_count[19] ; 3       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_count[10] ; 3       ;
-; Total number of inverted registers = 10              ;         ;
+; Total number of inverted registers = 14              ;         ;
 +------------------------------------------------------+---------+
 
 
@@ -485,7 +489,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 20 03:23:57 2014
+    Info: Processing started: Fri Jun 20 03:48:10 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elevator_simulator -c elevator_simulator
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (10335): Unrecognized synthesis attribute "tool" at elevator_simulator.v(12)
@@ -502,7 +506,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file spin_el
 Info (12021): Found 1 design units, including 1 entities, in source file elevator_control_push_btns.v
     Info (12023): Found entity 1: elevator_control_push_btns
 Info (12127): Elaborating entity "elevator_simulator" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(61): object "elv_count" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(63): object "elv_count" assigned a value but never read
 Info (12128): Elaborating entity "floor_seven_segment" for hierarchy "floor_seven_segment:md_elv_floors"
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(46): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(51): truncated value with size 32 to match size of target (15)
@@ -600,14 +604,14 @@ Info (17049): 90 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/GitHub/ElevatorMoveTest/output_files/elevator_simulator.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 633 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 649 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 55 output pins
-    Info (21061): Implemented 567 logic cells
+    Info (21059): Implemented 63 output pins
+    Info (21061): Implemented 575 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 81 warnings
     Info: Peak virtual memory: 443 megabytes
-    Info: Processing ended: Fri Jun 20 03:24:00 2014
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Fri Jun 20 03:48:12 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

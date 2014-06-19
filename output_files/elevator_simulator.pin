@@ -612,12 +612,12 @@ GND*                         : R25       :        :                   :         
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 GND*                         : T2        :        :                   :         : 1         :                
-GND*                         : T3        :        :                   :         : 1         :                
+led_s[0]                     : T3        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : T4        :        :                   :         : 1         :                
 GND                          : T5        : gnd    :                   :         :           :                
-GND*                         : T6        :        :                   :         : 1         :                
-GND*                         : T7        :        :                   :         : 1         :                
-GND*                         : T8        :        :                   :         : 1         :                
+led_s[1]                     : T6        : output : 3.3-V LVTTL       :         : 1         : Y              
+led_s[2]                     : T7        : output : 3.3-V LVTTL       :         : 1         : Y              
+led_s[3]                     : T8        : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCINT                       : T9        : power  :                   : 1.2V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
@@ -636,10 +636,10 @@ GND*                         : T23       :        :                   :         
 GND*                         : T24       :        :                   :         : 6         :                
 GND*                         : T25       :        :                   :         : 6         :                
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
-GND*                         : U1        :        :                   :         : 1         :                
-GND*                         : U2        :        :                   :         : 1         :                
-GND*                         : U3        :        :                   :         : 1         :                
-GND*                         : U4        :        :                   :         : 1         :                
+led_s[4]                     : U1        : output : 3.3-V LVTTL       :         : 1         : Y              
+led_s[5]                     : U2        : output : 3.3-V LVTTL       :         : 1         : Y              
+led_s[6]                     : U3        : output : 3.3-V LVTTL       :         : 1         : Y              
+led_s[7]                     : U4        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : U5        :        :                   :         : 1         :                
 GND*                         : U6        :        :                   :         : 1         :                
 GND*                         : U7        :        :                   :         : 1         :                

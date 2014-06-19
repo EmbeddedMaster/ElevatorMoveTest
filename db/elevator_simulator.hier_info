@@ -65,6 +65,14 @@ push_btns[5] => push_btns[5].IN1
 push_btns[6] => push_btns[6].IN1
 push_btns[7] => push_btns[7].IN1
 push_btns[8] => push_btns[8].IN1
+led_s[0] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[1] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[2] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[3] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[4] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[5] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[6] <= elevator_control_push_btns:md_elv_control.led_s
+led_s[7] <= elevator_control_push_btns:md_elv_control.led_s
 
 
 |elevator_simulator|floor_seven_segment:md_elv_floors
@@ -947,6 +955,14 @@ elv1_dir[1] => Equal0.IN0
 |elevator_simulator|elevator_control_push_btns:md_elv_control
 clk => input_confirm~reg0.CLK
 clk => input_status.CLK
+clk => led_sx[0].CLK
+clk => led_sx[1].CLK
+clk => led_sx[2].CLK
+clk => led_sx[3].CLK
+clk => led_sx[4].CLK
+clk => led_sx[5].CLK
+clk => led_sx[6].CLK
+clk => led_sx[7].CLK
 clk => prev_what_button~1.DATAIN
 clk => destination_reg~2.DATAIN
 clk => current_reg~2.DATAIN
@@ -1031,6 +1047,14 @@ push_btns[8] => Equal5.IN1
 push_btns[8] => Equal6.IN1
 push_btns[8] => Equal7.IN1
 push_btns[8] => Equal8.IN0
+led_s[0] <= led_sx[0].DB_MAX_OUTPUT_PORT_TYPE
+led_s[1] <= led_sx[1].DB_MAX_OUTPUT_PORT_TYPE
+led_s[2] <= led_sx[2].DB_MAX_OUTPUT_PORT_TYPE
+led_s[3] <= led_sx[3].DB_MAX_OUTPUT_PORT_TYPE
+led_s[4] <= led_sx[4].DB_MAX_OUTPUT_PORT_TYPE
+led_s[5] <= led_sx[5].DB_MAX_OUTPUT_PORT_TYPE
+led_s[6] <= led_sx[6].DB_MAX_OUTPUT_PORT_TYPE
+led_s[7] <= led_sx[7].DB_MAX_OUTPUT_PORT_TYPE
 current[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 current[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 current[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE

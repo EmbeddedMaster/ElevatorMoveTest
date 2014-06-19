@@ -22,11 +22,12 @@
 
 module elevator_simulator(
 	clk_in, resetn,
-	dot_col, dot_raw,			//dot matrix
-	segout, segcom,			//7-segment
-	lcd_rs, lcd_rw, lcd_en, lcd_data,		//text lcd
-	motor_out,	//motor_out
-	push_btns
+	dot_col, dot_raw,							// dot matrix
+	segout, segcom,							// 7-segment
+	lcd_rs, lcd_rw, lcd_en, lcd_data,	// text lcd
+	motor_out,									//	motor
+	push_btns,									// 9 buttons
+	led_s											// led segment
 );
 
 	input clk_in;
@@ -47,12 +48,13 @@ module elevator_simulator(
 	
 	input[8:0] push_btns;
 	
+	output[7:0] led_s;
+	
 	//clk_out counting
 	reg[32:0] cnt,cnt2; 
 	reg clk_out,clk_out2; 
 	
-	
-	//manipulatin elevator
+	//manipulating elevator
 	wire[4:0] __current;
 	wire[4:0] __destination;
 	wire input_confirm;
@@ -109,6 +111,7 @@ module elevator_simulator(
 	(
 		.clk				(clk_in),
 		.push_btns		(push_btns),
+		.led_s			(led_s),
 		.current			(__current),
 		.destination	(__destination),
 		.input_confirm	(input_confirm)

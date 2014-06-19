@@ -1,5 +1,5 @@
 Fitter report for elevator_simulator
-Fri Jun 20 03:24:14 2014
+Fri Jun 20 03:48:25 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -64,18 +64,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 20 03:24:14 2014           ;
+; Fitter Status                      ; Successful - Fri Jun 20 03:48:25 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; elevator_simulator                              ;
 ; Top-level Entity Name              ; elevator_simulator                              ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C50F672C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 532 / 50,528 ( 1 % )                            ;
-;     Total combinational functions  ; 514 / 50,528 ( 1 % )                            ;
-;     Dedicated logic registers      ; 249 / 50,528 ( < 1 % )                          ;
-; Total registers                    ; 249                                             ;
-; Total pins                         ; 66 / 450 ( 15 % )                               ;
+; Total logic elements               ; 537 / 50,528 ( 1 % )                            ;
+;     Total combinational functions  ; 522 / 50,528 ( 1 % )                            ;
+;     Dedicated logic registers      ; 257 / 50,528 ( < 1 % )                          ;
+; Total registers                    ; 257                                             ;
+; Total pins                         ; 74 / 450 ( 16 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 594,432 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 172 ( 0 % )                                 ;
@@ -151,8 +151,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 833 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 833 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 857 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 857 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -175,7 +175,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 830     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 854     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -191,28 +191,28 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 532 / 50,528 ( 1 % )   ;
-;     -- Combinational with no register       ; 283                    ;
-;     -- Register only                        ; 18                     ;
-;     -- Combinational with a register        ; 231                    ;
+; Total logic elements                        ; 537 / 50,528 ( 1 % )   ;
+;     -- Combinational with no register       ; 280                    ;
+;     -- Register only                        ; 15                     ;
+;     -- Combinational with a register        ; 242                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
 ;     -- 4 input functions                    ; 252                    ;
 ;     -- 3 input functions                    ; 76                     ;
-;     -- <=2 input functions                  ; 186                    ;
-;     -- Register only                        ; 18                     ;
+;     -- <=2 input functions                  ; 194                    ;
+;     -- Register only                        ; 15                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 386                    ;
+;     -- normal mode                          ; 394                    ;
 ;     -- arithmetic mode                      ; 128                    ;
 ;                                             ;                        ;
-; Total registers*                            ; 249 / 51,830 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 249 / 50,528 ( < 1 % ) ;
+; Total registers*                            ; 257 / 51,830 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 257 / 50,528 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,302 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 40 / 3,158 ( 1 % )     ;
+; Total LABs:  partially or completely used   ; 41 / 3,158 ( 1 % )     ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 66 / 450 ( 15 % )      ;
+; I/O pins                                    ; 74 / 450 ( 16 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
 ;                                             ;                        ;
 ; Global signals                              ; 4                      ;
@@ -226,11 +226,11 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 6% / 6% / 6%           ;
-; Maximum fan-out                             ; 192                    ;
+; Peak interconnect usage (total/H/V)         ; 4% / 5% / 4%           ;
+; Maximum fan-out                             ; 200                    ;
 ; Highest non-global fan-out                  ; 90                     ;
-; Total fan-out                               ; 2395                   ;
-; Average fan-out                             ; 2.82                   ;
+; Total fan-out                               ; 2432                   ;
+; Average fan-out                             ; 2.79                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -243,28 +243,28 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 532 / 50528 ( 1 % )   ; 0 / 50528 ( 0 % )              ;
-;     -- Combinational with no register       ; 283                   ; 0                              ;
-;     -- Register only                        ; 18                    ; 0                              ;
-;     -- Combinational with a register        ; 231                   ; 0                              ;
+; Total logic elements                        ; 537 / 50528 ( 1 % )   ; 0 / 50528 ( 0 % )              ;
+;     -- Combinational with no register       ; 280                   ; 0                              ;
+;     -- Register only                        ; 15                    ; 0                              ;
+;     -- Combinational with a register        ; 242                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
 ;     -- 4 input functions                    ; 252                   ; 0                              ;
 ;     -- 3 input functions                    ; 76                    ; 0                              ;
-;     -- <=2 input functions                  ; 186                   ; 0                              ;
-;     -- Register only                        ; 18                    ; 0                              ;
+;     -- <=2 input functions                  ; 194                   ; 0                              ;
+;     -- Register only                        ; 15                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 386                   ; 0                              ;
+;     -- normal mode                          ; 394                   ; 0                              ;
 ;     -- arithmetic mode                      ; 128                   ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 249                   ; 0                              ;
-;     -- Dedicated logic registers            ; 249 / 50528 ( < 1 % ) ; 0 / 50528 ( 0 % )              ;
+; Total registers                             ; 257                   ; 0                              ;
+;     -- Dedicated logic registers            ; 257 / 50528 ( < 1 % ) ; 0 / 50528 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 40 / 3158 ( 1 % )     ; 0 / 3158 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 41 / 3158 ( 1 % )     ; 0 / 3158 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 66                    ; 0                              ;
+; I/O pins                                    ; 74                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 172 ( 0 % )       ; 0 / 172 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -277,8 +277,8 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 2395                  ; 0                              ;
-;     -- Registered Connections               ; 773                   ; 0                              ;
+;     -- Total Connections                    ; 2432                  ; 0                              ;
+;     -- Registered Connections               ; 789                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -286,7 +286,7 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 11                    ; 0                              ;
-;     -- Output Ports                         ; 55                    ; 0                              ;
+;     -- Output Ports                         ; 63                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -364,6 +364,14 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ; lcd_en       ; AA9   ; 8        ; 13           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; lcd_rs       ; Y11   ; 8        ; 18           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; lcd_rw       ; Y12   ; 8        ; 35           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[0]     ; T3    ; 1        ; 0            ; 19           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[1]     ; T6    ; 1        ; 0            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[2]     ; T7    ; 1        ; 0            ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[3]     ; T8    ; 1        ; 0            ; 7            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[4]     ; U1    ; 1        ; 0            ; 17           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[5]     ; U2    ; 1        ; 0            ; 17           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[6]     ; U3    ; 1        ; 0            ; 16           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; led_s[7]     ; U4    ; 1        ; 0            ; 16           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; motor_out[0] ; AA10  ; 8        ; 15           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; motor_out[1] ; AA11  ; 8        ; 15           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; motor_out[2] ; AA12  ; 8        ; 35           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -392,7 +400,7 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 1 / 61 ( 2 % )   ; 3.3V          ; --           ;
+; 1        ; 9 / 61 ( 15 % )  ; 3.3V          ; --           ;
 ; 2        ; 3 / 57 ( 5 % )   ; 3.3V          ; --           ;
 ; 3        ; 0 / 52 ( 0 % )   ; 3.3V          ; --           ;
 ; 4        ; 0 / 54 ( 0 % )   ; 3.3V          ; --           ;
@@ -952,12 +960,12 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ; R26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T1       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T2       ; 75         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T3       ; 76         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T3       ; 76         ; 1        ; led_s[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; T4       ; 79         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; T5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T6       ; 87         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T7       ; 86         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T8       ; 106        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T6       ; 87         ; 1        ; led_s[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; T7       ; 86         ; 1        ; led_s[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; T8       ; 106        ; 1        ; led_s[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; T9       ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; T10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T11      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -976,10 +984,10 @@ The pin-out file can be found in C:/GitHub/ElevatorMoveTest/output_files/elevato
 ; T24      ; 278        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T25      ; 277        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T26      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; U1       ; 81         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U2       ; 80         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U3       ; 82         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U4       ; 83         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; U1       ; 81         ; 1        ; led_s[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; U2       ; 80         ; 1        ; led_s[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; U3       ; 82         ; 1        ; led_s[6]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; U4       ; 83         ; 1        ; led_s[7]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; U5       ; 94         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U6       ; 92         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U7       ; 93         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1126,11 +1134,11 @@ Note: User assignments will override these defaults. The user specified values a
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                              ; Library Name ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------+--------------+
-; |elevator_simulator                               ; 532 (9)     ; 249 (8)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 66   ; 0            ; 283 (1)      ; 18 (0)            ; 231 (0)          ; |elevator_simulator                                              ; work         ;
+; |elevator_simulator                               ; 537 (9)     ; 257 (8)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 74   ; 0            ; 280 (1)      ; 15 (0)            ; 242 (0)          ; |elevator_simulator                                              ; work         ;
 ;    |direction_state_dot_matrix:md_elv_directions| ; 111 (111)   ; 55 (55)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (56)      ; 6 (6)             ; 49 (49)          ; |elevator_simulator|direction_state_dot_matrix:md_elv_directions ; work         ;
 ;    |draw_elevator_text_lcd:md_elv_draw|           ; 185 (185)   ; 75 (75)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 110 (110)    ; 0 (0)             ; 75 (75)          ; |elevator_simulator|draw_elevator_text_lcd:md_elv_draw           ; work         ;
-;    |elevator_control_push_btns:md_elv_control|    ; 59 (59)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 9 (9)             ; 28 (28)          ; |elevator_simulator|elevator_control_push_btns:md_elv_control    ; work         ;
-;    |floor_seven_segment:md_elv_floors|            ; 115 (115)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 67 (67)      ; 3 (3)             ; 45 (45)          ; |elevator_simulator|floor_seven_segment:md_elv_floors            ; work         ;
+;    |elevator_control_push_btns:md_elv_control|    ; 67 (67)     ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 9 (9)             ; 37 (37)          ; |elevator_simulator|elevator_control_push_btns:md_elv_control    ; work         ;
+;    |floor_seven_segment:md_elv_floors|            ; 112 (112)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 65 (65)      ; 0 (0)             ; 47 (47)          ; |elevator_simulator|floor_seven_segment:md_elv_floors            ; work         ;
 ;    |spin_elevator_step_motor:md_elv_spin|         ; 61 (61)     ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 34 (34)          ; |elevator_simulator|spin_elevator_step_motor:md_elv_spin         ; work         ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1196,16 +1204,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; motor_out[1] ; Output   ; --            ; --            ; --                    ; --  ;
 ; motor_out[2] ; Output   ; --            ; --            ; --                    ; --  ;
 ; motor_out[3] ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[6]     ; Output   ; --            ; --            ; --                    ; --  ;
+; led_s[7]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; clk_in       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; resetn       ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
-; push_btns[1] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
-; push_btns[8] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; push_btns[6] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; push_btns[7] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; push_btns[0] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; push_btns[2] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; push_btns[3] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; push_btns[4] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
-; push_btns[7] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
-; push_btns[6] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; push_btns[8] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; push_btns[1] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; push_btns[5] ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 +--------------+----------+---------------+---------------+-----------------------+-----+
 
@@ -1217,155 +1233,155 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+-------------------+---------+
 ; clk_in                                                              ;                   ;         ;
 ; resetn                                                              ;                   ;         ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_en                    ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|clk_out         ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_f[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_g[24]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_g[16]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_g[10]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_g[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_h[24]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_h[16]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_h[10]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_h[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_b[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_c[24]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_c[16]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_c[10]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_c[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_d[24]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_d[16]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_d[10]                 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_d[0]                  ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01000            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01010            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01011            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01100            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00110            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00010            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00011            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00100            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00101            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00111            ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01001            ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt[31]         ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt[32]         ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]              ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[1]              ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[2]              ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~0 ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~2 ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~3 ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~4 ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00000~0          ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~20           ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~21           ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[23]~38       ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_c[24]~2               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_g[24]~2               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode~20               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_h[5]~3                ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|reg_d[5]~3                ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~1           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt[12]~2       ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~3           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~4           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~5           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~8           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~9           ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~10          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~11          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~12          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~13          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~14          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~15          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~16          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~17          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~18          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~19          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~20          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~21          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~22          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~23          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~24          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~25          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~26          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~27          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~28          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~29          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~30          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~31          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~32          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~33          ; 0                 ; 6       ;
-;      - direction_state_dot_matrix:md_elv_directions|cnt~34          ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[9]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[0]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[1]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[2]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[3]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[4]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[5]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[6]               ; 0                 ; 6       ;
-;      - draw_elevator_text_lcd:md_elv_draw|set_data[7]               ; 0                 ; 6       ;
-; push_btns[1]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal6~0           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal8~0           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~1           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~4           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~4           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal5~3           ; 1                 ; 6       ;
-; push_btns[8]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal6~0           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal8~0           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~1           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~4           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~4           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal5~3           ; 1                 ; 6       ;
-; push_btns[0]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_en                    ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|clk_out         ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_f[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_g[24]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_g[16]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_g[10]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_g[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_h[24]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_h[16]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_h[10]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_h[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_b[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_c[24]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_c[16]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_c[10]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_c[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_d[24]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_d[16]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_d[10]                 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_d[0]                  ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01000            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01010            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01011            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01100            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00110            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00010            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00011            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00100            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00101            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00111            ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.01001            ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt[31]         ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt[32]         ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]              ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[1]              ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[2]              ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~0 ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~2 ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~3 ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|dot_clk_count~4 ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode.00000~0          ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~20           ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~21           ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[23]~38       ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_c[24]~2               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_g[24]~2               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|lcd_mode~20               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_h[5]~3                ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|reg_d[5]~3                ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~1           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt[12]~2       ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~3           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~4           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~5           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~8           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~9           ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~10          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~11          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~12          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~13          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~14          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~15          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~16          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~17          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~18          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~19          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~20          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~21          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~22          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~23          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~24          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~25          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~26          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~27          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~28          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~29          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~30          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~31          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~32          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~33          ; 1                 ; 6       ;
+;      - direction_state_dot_matrix:md_elv_directions|cnt~34          ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[9]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[0]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[1]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[2]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[3]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[4]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[5]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[6]               ; 1                 ; 6       ;
+;      - draw_elevator_text_lcd:md_elv_draw|set_data[7]               ; 1                 ; 6       ;
+; push_btns[6]                                                        ;                   ;         ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~2           ; 1                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal6~1           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal7~0           ; 1                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 1                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 1                 ; 6       ;
+; push_btns[7]                                                        ;                   ;         ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal6~1           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal7~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 0                 ; 6       ;
+; push_btns[0]                                                        ;                   ;         ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 0                 ; 6       ;
 ; push_btns[2]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal3~1           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal4~1           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~3           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~3           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal3~1           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal4~1           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~3           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~3           ; 1                 ; 6       ;
 ; push_btns[3]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal3~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal4~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~3           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~3           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal3~0           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal4~0           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~3           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~3           ; 1                 ; 6       ;
 ; push_btns[4]                                                        ;                   ;         ;
 ;      - elevator_control_push_btns:md_elv_control|Equal1~0           ; 0                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal3~0           ; 0                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal4~0           ; 0                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal2~3           ; 0                 ; 6       ;
 ;      - elevator_control_push_btns:md_elv_control|Equal1~3           ; 0                 ; 6       ;
-; push_btns[7]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal7~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~2           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal6~1           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 0                 ; 6       ;
-; push_btns[6]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal7~0           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~2           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal6~1           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 0                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 0                 ; 6       ;
+; push_btns[8]                                                        ;                   ;         ;
+;      - elevator_control_push_btns:md_elv_control|Equal8~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~1           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal6~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~4           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~4           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal5~3           ; 0                 ; 6       ;
+; push_btns[1]                                                        ;                   ;         ;
+;      - elevator_control_push_btns:md_elv_control|Equal8~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~1           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal6~0           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~4           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~4           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal5~3           ; 0                 ; 6       ;
 ; push_btns[5]                                                        ;                   ;         ;
-;      - elevator_control_push_btns:md_elv_control|Equal7~1           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal8~1           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal1~2           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal6~2           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 1                 ; 6       ;
-;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 1                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal8~1           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal1~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal2~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal6~2           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal7~1           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal0~3           ; 0                 ; 6       ;
+;      - elevator_control_push_btns:md_elv_control|Equal5~2           ; 0                 ; 6       ;
 +---------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1375,26 +1391,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                          ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 ; clk_in                                                        ; PIN_N1             ; 29      ; Clock                   ; no     ; --                   ; --               ; --                        ;
-; clk_in                                                        ; PIN_N1             ; 192     ; Clock                   ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|clk_out          ; LCFF_X24_Y20_N11   ; 21      ; Clock                   ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|cnt[12]~2        ; LCCOMB_X23_Y20_N22 ; 31      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|dot_clk_count[2] ; LCFF_X28_Y1_N23    ; 19      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|dot_clk_count[3] ; LCFF_X28_Y1_N15    ; 20      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|dot_raw_reg[0]~0 ; LCCOMB_X28_Y1_N12  ; 17      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|Selector139~1              ; LCCOMB_X48_Y16_N2  ; 1       ; Latch enable            ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|Selector161~2              ; LCCOMB_X48_Y16_N28 ; 8       ; Latch enable            ; yes    ; Global Clock         ; GCLK14           ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~20            ; LCCOMB_X51_Y16_N12 ; 16      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~21            ; LCCOMB_X51_Y14_N30 ; 16      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[23]~38        ; LCCOMB_X52_Y15_N2  ; 24      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|reg_c[24]~2                ; LCCOMB_X51_Y17_N30 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|reg_g[24]~2                ; LCCOMB_X50_Y15_N26 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; elevator_control_push_btns:md_elv_control|always0~12          ; LCCOMB_X50_Y11_N26 ; 4       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; elevator_control_push_btns:md_elv_control|current_reg~18      ; LCCOMB_X50_Y11_N14 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; elevator_control_push_btns:md_elv_control|destination_reg~18  ; LCCOMB_X51_Y11_N18 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; elevator_control_push_btns:md_elv_control|input_confirm       ; LCFF_X48_Y11_N9    ; 8       ; Clock                   ; yes    ; Global Clock         ; GCLK13           ; --                        ;
-; floor_seven_segment:md_elv_floors|segout_tmp[2]~8             ; LCCOMB_X50_Y13_N30 ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; clk_in                                                        ; PIN_N1             ; 200     ; Clock                   ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|clk_out          ; LCFF_X24_Y35_N29   ; 21      ; Clock                   ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|cnt[12]~2        ; LCCOMB_X23_Y35_N10 ; 31      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|dot_clk_count[2] ; LCFF_X35_Y1_N7     ; 19      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|dot_clk_count[3] ; LCFF_X35_Y1_N15    ; 20      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|dot_raw_reg[0]~0 ; LCCOMB_X35_Y1_N28  ; 17      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|Selector139~1              ; LCCOMB_X33_Y20_N16 ; 1       ; Latch enable            ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|Selector161~2              ; LCCOMB_X38_Y20_N22 ; 8       ; Latch enable            ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~20            ; LCCOMB_X34_Y20_N24 ; 16      ; Sync. load              ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]~21            ; LCCOMB_X36_Y22_N12 ; 16      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[23]~38        ; LCCOMB_X37_Y23_N2  ; 24      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|reg_c[24]~2                ; LCCOMB_X38_Y20_N18 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|reg_g[24]~2                ; LCCOMB_X42_Y20_N4  ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; elevator_control_push_btns:md_elv_control|always0~12          ; LCCOMB_X41_Y17_N28 ; 12      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; elevator_control_push_btns:md_elv_control|current_reg~18      ; LCCOMB_X41_Y17_N24 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; elevator_control_push_btns:md_elv_control|destination_reg~18  ; LCCOMB_X41_Y17_N30 ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; elevator_control_push_btns:md_elv_control|input_confirm       ; LCFF_X39_Y17_N9    ; 8       ; Clock                   ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; floor_seven_segment:md_elv_floors|segout_tmp[2]~8             ; LCCOMB_X41_Y18_N30 ; 7       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
 ; resetn                                                        ; PIN_P6             ; 90      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; spin_elevator_step_motor:md_elv_spin|motor_out[3]~4           ; LCCOMB_X10_Y22_N10 ; 4       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; spin_elevator_step_motor:md_elv_spin|motor_out[3]~4           ; LCCOMB_X23_Y1_N6   ; 4       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1403,10 +1419,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 ; Name                                                    ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
-; clk_in                                                  ; PIN_N1             ; 192     ; Global Clock         ; GCLK2            ; --                        ;
-; direction_state_dot_matrix:md_elv_directions|clk_out    ; LCFF_X24_Y20_N11   ; 21      ; Global Clock         ; GCLK1            ; --                        ;
-; draw_elevator_text_lcd:md_elv_draw|Selector161~2        ; LCCOMB_X48_Y16_N28 ; 8       ; Global Clock         ; GCLK14           ; --                        ;
-; elevator_control_push_btns:md_elv_control|input_confirm ; LCFF_X48_Y11_N9    ; 8       ; Global Clock         ; GCLK13           ; --                        ;
+; clk_in                                                  ; PIN_N1             ; 200     ; Global Clock         ; GCLK2            ; --                        ;
+; direction_state_dot_matrix:md_elv_directions|clk_out    ; LCFF_X24_Y35_N29   ; 21      ; Global Clock         ; GCLK8            ; --                        ;
+; draw_elevator_text_lcd:md_elv_draw|Selector161~2        ; LCCOMB_X38_Y20_N22 ; 8       ; Global Clock         ; GCLK13           ; --                        ;
+; elevator_control_push_btns:md_elv_control|input_confirm ; LCFF_X39_Y17_N9    ; 8       ; Global Clock         ; GCLK12           ; --                        ;
 +---------------------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1436,6 +1452,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; direction_state_dot_matrix:md_elv_directions|dot_clk_count[1]           ; 15      ;
 ; draw_elevator_text_lcd:md_elv_draw|count_lcd[1]                         ; 14      ;
 ; draw_elevator_text_lcd:md_elv_draw|WideNor0~33                          ; 12      ;
+; elevator_control_push_btns:md_elv_control|always0~12                    ; 12      ;
+; elevator_control_push_btns:md_elv_control|input_status                  ; 12      ;
 ; spin_elevator_step_motor:md_elv_spin|Equal3~1                           ; 12      ;
 ; elv2_floor[3]                                                           ; 12      ;
 ; elv1_floor[3]                                                           ; 12      ;
@@ -1471,10 +1489,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; floor_seven_segment:md_elv_floors|segout_tmp[2]~3                       ; 7       ;
 ; floor_seven_segment:md_elv_floors|Equal9~1                              ; 7       ;
 ; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01010                       ; 7       ;
-; push_btns[6]                                                            ; 6       ;
-; push_btns[7]                                                            ; 6       ;
-; push_btns[8]                                                            ; 6       ;
 ; push_btns[1]                                                            ; 6       ;
+; push_btns[8]                                                            ; 6       ;
+; push_btns[7]                                                            ; 6       ;
+; push_btns[6]                                                            ; 6       ;
 ; elevator_control_push_btns:md_elv_control|Equal7~1                      ; 6       ;
 ; elevator_control_push_btns:md_elv_control|Equal6~0                      ; 6       ;
 ; draw_elevator_text_lcd:md_elv_draw|Equal10~0                            ; 6       ;
@@ -1500,13 +1518,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; push_btns[0]                                                            ; 4       ;
 ; elevator_control_push_btns:md_elv_control|Equal5~3                      ; 4       ;
 ; elevator_control_push_btns:md_elv_control|Equal2~4                      ; 4       ;
-; elevator_control_push_btns:md_elv_control|always0~12                    ; 4       ;
-; elevator_control_push_btns:md_elv_control|__what_button.01001~2         ; 4       ;
-; elevator_control_push_btns:md_elv_control|Equal2~2                      ; 4       ;
-; elevator_control_push_btns:md_elv_control|input_status                  ; 4       ;
-; elevator_control_push_btns:md_elv_control|Equal1~0                      ; 4       ;
 ; draw_elevator_text_lcd:md_elv_draw|Equal11~0                            ; 4       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt[12]                    ; 4       ;
+; elevator_control_push_btns:md_elv_control|__what_button.01001~2         ; 4       ;
+; elevator_control_push_btns:md_elv_control|Equal2~2                      ; 4       ;
+; elevator_control_push_btns:md_elv_control|Equal1~0                      ; 4       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[3]~4                     ; 4       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_count[13]                    ; 4       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_count[15]                    ; 4       ;
@@ -1531,7 +1547,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01001                       ; 4       ;
 ; draw_elevator_text_lcd:md_elv_draw|delay_lcdclk[3]                      ; 4       ;
 ; elevator_control_push_btns:md_elv_control|Equal0~4                      ; 3       ;
-; elevator_control_push_btns:md_elv_control|Equal1~3                      ; 3       ;
 ; elevator_control_push_btns:md_elv_control|destination_reg.00110         ; 3       ;
 ; elevator_control_push_btns:md_elv_control|current_reg.00110             ; 3       ;
 ; direction_state_dot_matrix:md_elv_directions|LessThan0~5                ; 3       ;
@@ -1544,6 +1559,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; direction_state_dot_matrix:md_elv_directions|cnt[8]                     ; 3       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt[4]                     ; 3       ;
 ; direction_state_dot_matrix:md_elv_directions|dot_clk_count[3]~1         ; 3       ;
+; elevator_control_push_btns:md_elv_control|Equal1~3                      ; 3       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal2~3                           ; 3       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal2~2                           ; 3       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_count[8]                     ; 3       ;
@@ -1587,13 +1603,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; spin_elevator_step_motor:md_elv_spin|motor_out~6                        ; 2       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out~5                        ; 2       ;
 ; draw_elevator_text_lcd:md_elv_draw|Equal13~2                            ; 2       ;
-; elevator_control_push_btns:md_elv_control|__what_button.00000~0         ; 2       ;
-; elevator_control_push_btns:md_elv_control|__what_button.01001~1         ; 2       ;
-; elevator_control_push_btns:md_elv_control|Equal5~2                      ; 2       ;
-; elevator_control_push_btns:md_elv_control|Equal2~3                      ; 2       ;
-; elevator_control_push_btns:md_elv_control|__what_button.01001~0         ; 2       ;
-; elevator_control_push_btns:md_elv_control|Equal8~1                      ; 2       ;
-; elevator_control_push_btns:md_elv_control|Equal0~2                      ; 2       ;
 ; draw_elevator_text_lcd:md_elv_draw|WideNor0~32                          ; 2       ;
 ; elevator_control_push_btns:md_elv_control|destination_reg.00111         ; 2       ;
 ; elevator_control_push_btns:md_elv_control|destination_reg.00100         ; 2       ;
@@ -1628,6 +1637,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; direction_state_dot_matrix:md_elv_directions|cnt[2]                     ; 2       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt[1]                     ; 2       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt[0]                     ; 2       ;
+; elevator_control_push_btns:md_elv_control|__what_button.00000~0         ; 2       ;
+; elevator_control_push_btns:md_elv_control|__what_button.01001~1         ; 2       ;
+; elevator_control_push_btns:md_elv_control|Equal5~2                      ; 2       ;
+; elevator_control_push_btns:md_elv_control|Equal2~3                      ; 2       ;
+; elevator_control_push_btns:md_elv_control|__what_button.01001~0         ; 2       ;
+; elevator_control_push_btns:md_elv_control|Equal8~1                      ; 2       ;
+; elevator_control_push_btns:md_elv_control|Equal0~2                      ; 2       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal3~2                           ; 2       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal2~1                           ; 2       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal1~4                           ; 2       ;
@@ -1756,6 +1772,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; draw_elevator_text_lcd:md_elv_draw|reg_e[5]~feeder                      ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|dot_clk_count[0]~_wirecell ; 1       ;
 ; elevator_control_push_btns:md_elv_control|input_status~0                ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[7]~7                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[6]~6                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[5]~5                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[4]~4                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[3]~3                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[2]~2                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[1]~1                   ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[0]~0                   ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[3]~8                     ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[0]~7                     ; 1       ;
 ; draw_elevator_text_lcd:md_elv_draw|WideNor1~39                          ; 1       ;
@@ -1773,30 +1797,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; floor_seven_segment:md_elv_floors|Selector10~3                          ; 1       ;
 ; floor_seven_segment:md_elv_floors|Selector11~3                          ; 1       ;
 ; floor_seven_segment:md_elv_floors|Selector14~3                          ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.01001        ; 1       ;
-; elevator_control_push_btns:md_elv_control|WideOr6~4                     ; 1       ;
-; elevator_control_push_btns:md_elv_control|WideOr6~3                     ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00001        ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00000        ; 1       ;
-; elevator_control_push_btns:md_elv_control|WideOr6~2                     ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00010        ; 1       ;
-; elevator_control_push_btns:md_elv_control|always0~11                    ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00011        ; 1       ;
-; elevator_control_push_btns:md_elv_control|always0~10                    ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00110        ; 1       ;
-; elevator_control_push_btns:md_elv_control|WideOr6~1                     ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00101        ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00100        ; 1       ;
-; elevator_control_push_btns:md_elv_control|WideOr6~0                     ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.00111        ; 1       ;
-; elevator_control_push_btns:md_elv_control|prev_what_button.01000        ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal0~3                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal6~1                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal4~0                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal3~0                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal1~1                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal8~0                      ; 1       ;
-; elevator_control_push_btns:md_elv_control|Equal7~0                      ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt~34                     ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt~33                     ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|cnt~32                     ; 1       ;
@@ -1912,6 +1912,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; direction_state_dot_matrix:md_elv_directions|dot_clk_count~2            ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|Add1~0                     ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|dot_clk_count~0            ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.01001        ; 1       ;
+; elevator_control_push_btns:md_elv_control|WideOr6~4                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|WideOr6~3                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00001        ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00000        ; 1       ;
+; elevator_control_push_btns:md_elv_control|WideOr6~2                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00010        ; 1       ;
+; elevator_control_push_btns:md_elv_control|always0~11                    ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00011        ; 1       ;
+; elevator_control_push_btns:md_elv_control|always0~10                    ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00110        ; 1       ;
+; elevator_control_push_btns:md_elv_control|WideOr6~1                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00101        ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00100        ; 1       ;
+; elevator_control_push_btns:md_elv_control|WideOr6~0                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.01000        ; 1       ;
+; elevator_control_push_btns:md_elv_control|prev_what_button.00111        ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal0~3                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal7~0                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal6~1                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal4~0                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal3~0                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal1~1                      ; 1       ;
+; elevator_control_push_btns:md_elv_control|Equal8~0                      ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal4~1                           ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal1~7                           ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|Equal3~3                           ; 1       ;
@@ -2020,6 +2044,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; direction_state_dot_matrix:md_elv_directions|Mux39~0                    ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|Mux25~0                    ; 1       ;
 ; direction_state_dot_matrix:md_elv_directions|Mux26~0                    ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[7]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[6]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[5]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[4]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[3]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[2]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[1]                     ; 1       ;
+; elevator_control_push_btns:md_elv_control|led_sx[0]                     ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[3]                       ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[2]                       ; 1       ;
 ; spin_elevator_step_motor:md_elv_spin|motor_out[1]                       ; 1       ;
@@ -2323,37 +2355,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-------------------------+
 ; Other Routing Resource Type ; Usage                   ;
 +-----------------------------+-------------------------+
-; Block interconnects         ; 724 / 141,150 ( < 1 % ) ;
-; C16 interconnects           ; 30 / 4,720 ( < 1 % )    ;
-; C4 interconnects            ; 450 / 90,240 ( < 1 % )  ;
-; Direct links                ; 206 / 141,150 ( < 1 % ) ;
+; Block interconnects         ; 740 / 141,150 ( < 1 % ) ;
+; C16 interconnects           ; 39 / 4,720 ( < 1 % )    ;
+; C4 interconnects            ; 426 / 90,240 ( < 1 % )  ;
+; Direct links                ; 214 / 141,150 ( < 1 % ) ;
 ; Global clocks               ; 4 / 16 ( 25 % )         ;
-; Local interconnects         ; 313 / 50,528 ( < 1 % )  ;
-; R24 interconnects           ; 42 / 4,448 ( < 1 % )    ;
-; R4 interconnects            ; 522 / 121,992 ( < 1 % ) ;
+; Local interconnects         ; 317 / 50,528 ( < 1 % )  ;
+; R24 interconnects           ; 49 / 4,448 ( 1 % )      ;
+; R4 interconnects            ; 591 / 121,992 ( < 1 % ) ;
 +-----------------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.30) ; Number of LABs  (Total = 40) ;
+; Number of Logic Elements  (Average = 13.10) ; Number of LABs  (Total = 41) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 2                            ;
-; 5                                           ; 0                            ;
+; 1                                           ; 2                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
-; 8                                           ; 2                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 1                            ;
 ; 9                                           ; 1                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 2                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 1                            ;
-; 14                                          ; 2                            ;
-; 15                                          ; 3                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 5                            ;
 ; 16                                          ; 23                           ;
 +---------------------------------------------+------------------------------+
 
@@ -2361,52 +2393,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.43) ; Number of LABs  (Total = 40) ;
+; LAB-wide Signals  (Average = 1.54) ; Number of LABs  (Total = 41) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 33                           ;
-; 1 Clock enable                     ; 11                           ;
-; 1 Sync. clear                      ; 7                            ;
+; 1 Clock                            ; 32                           ;
+; 1 Clock enable                     ; 14                           ;
+; 1 Sync. clear                      ; 10                           ;
 ; 1 Sync. load                       ; 3                            ;
-; 2 Clocks                           ; 3                            ;
+; 2 Clocks                           ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 19.43) ; Number of LABs  (Total = 40) ;
+; Number of Signals Sourced  (Average = 19.27) ; Number of LABs  (Total = 41) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
+; 2                                            ; 2                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 2                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 2                            ;
+; 13                                           ; 1                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
 ; 16                                           ; 4                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 2                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 1                            ;
 ; 19                                           ; 3                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 3                            ;
+; 21                                           ; 4                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 3                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 2                            ;
-; 27                                           ; 0                            ;
+; 23                                           ; 4                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 1                            ;
 ; 28                                           ; 3                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 2                            ;
+; 29                                           ; 3                            ;
+; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
 ; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
@@ -2415,68 +2447,70 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.97) ; Number of LABs  (Total = 40) ;
+; Number of Signals Sourced Out  (Average = 9.54) ; Number of LABs  (Total = 41) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 1                            ;
+; 1                                               ; 3                            ;
+; 2                                               ; 3                            ;
 ; 3                                               ; 1                            ;
-; 4                                               ; 3                            ;
-; 5                                               ; 2                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
 ; 6                                               ; 3                            ;
-; 7                                               ; 1                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 3                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 4                            ;
 ; 10                                              ; 0                            ;
-; 11                                              ; 6                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 4                            ;
-; 14                                              ; 1                            ;
-; 15                                              ; 4                            ;
-; 16                                              ; 4                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 4                            ;
+; 13                                              ; 2                            ;
+; 14                                              ; 2                            ;
+; 15                                              ; 3                            ;
+; 16                                              ; 3                            ;
 ; 17                                              ; 0                            ;
-; 18                                              ; 0                            ;
+; 18                                              ; 1                            ;
 ; 19                                              ; 0                            ;
 ; 20                                              ; 0                            ;
 ; 21                                              ; 0                            ;
-; 22                                              ; 1                            ;
+; 22                                              ; 0                            ;
+; 23                                              ; 0                            ;
+; 24                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.25) ; Number of LABs  (Total = 40) ;
+; Number of Distinct Inputs  (Average = 14.10) ; Number of LABs  (Total = 41) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 2                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 4                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 3                            ;
+; 6                                            ; 5                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 2                            ;
+; 8                                            ; 7                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
 ; 11                                           ; 1                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 3                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 1                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 0                            ;
 ; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
+; 20                                           ; 2                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 1                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 4                            ;
+; 24                                           ; 2                            ;
 ; 25                                           ; 1                            ;
-; 26                                           ; 2                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
+; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
@@ -2516,8 +2550,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+--------------------------------------------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s)                                   ; Delay Added in ns ;
 +-----------------+--------------------------------------------------------+-------------------+
-; clk_in          ; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]        ; 149.3             ;
-; clk_in          ; clk_in,draw_elevator_text_lcd:md_elv_draw|count_lcd[0] ; 25.7              ;
+; clk_in          ; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]        ; 126.4             ;
+; clk_in          ; clk_in,draw_elevator_text_lcd:md_elv_draw|count_lcd[0] ; 23.1              ;
 +-----------------+--------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
@@ -2528,35 +2562,35 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------------------------+------------------------------------------------+-------------------+
 ; Source Register                                   ; Destination Register                           ; Delay Added in ns ;
 +---------------------------------------------------+------------------------------------------------+-------------------+
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01000 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 10.742            ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00000 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 10.169            ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01010 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 9.801             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01100 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 9.216             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01011 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 9.214             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[3]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.727             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[4]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.726             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[2]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.722             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[5]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.029             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[1]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.888             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[15]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.174             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[14]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.098             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[10]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.674             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[11]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.660             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[9]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.587             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[12]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.582             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[7]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.578             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.567             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[6]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.541             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[13]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.494             ;
-; draw_elevator_text_lcd:md_elv_draw|count_lcd[8]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.494             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00001 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 5.391             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00010 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 5.376             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00101 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 4.746             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00100 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 4.665             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00011 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 4.661             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01001 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.956             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00111 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.909             ;
-; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00110 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.909             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01000 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 9.160             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00000 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.820             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01010 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.598             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01100 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.030             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01011 ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 8.028             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[3]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.208             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[4]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.204             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[1]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 7.060             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[2]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.880             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[5]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.577             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[15]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.097             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[14]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 6.019             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[10]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.587             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[11]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.573             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[9]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.496             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[12]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.490             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[7]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.486             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[6]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.445             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[0]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.407             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[13]  ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.391             ;
+; draw_elevator_text_lcd:md_elv_draw|count_lcd[8]   ; draw_elevator_text_lcd:md_elv_draw|set_data[9] ; 5.391             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00010 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 4.118             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00111 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.494             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00001 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.417             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00110 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.412             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.01001 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 3.096             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00101 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 2.549             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00100 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 2.468             ;
+; draw_elevator_text_lcd:md_elv_draw|lcd_mode.00011 ; draw_elevator_text_lcd:md_elv_draw|set_data[7] ; 2.464             ;
 +---------------------------------------------------+------------------------------------------------+-------------------+
 Note: This table only shows the top 29 path(s) that have the largest delay added for hold.
 
@@ -2617,13 +2651,13 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X46_Y11 to location X56_Y21
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X34_Y11 to location X45_Y21
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 1.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.17 seconds.
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 55 output pins without output pin load capacitance assignment
+Warning (306006): Found 63 output pins without output pin load capacitance assignment
     Info (306007): Pin "dot_col[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "dot_col[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "dot_col[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2679,6 +2713,14 @@ Warning (306006): Found 55 output pins without output pin load capacitance assig
     Info (306007): Pin "motor_out[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "motor_out[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "motor_out[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led_s[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
@@ -2686,10 +2728,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/GitHub/ElevatorMoveTest/output_files/elevator_simulator.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 706 megabytes
-    Info: Processing ended: Fri Jun 20 03:24:14 2014
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 718 megabytes
+    Info: Processing ended: Fri Jun 20 03:48:26 2014
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
