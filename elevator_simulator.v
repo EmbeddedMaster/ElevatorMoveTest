@@ -24,7 +24,8 @@ module elevator_simulator(
 	clk_in, resetn,
 	dot_col, dot_raw,			//dot matrix
 	segout, segcom,			//7-segment
-	lcd_rs, lcd_rw, lcd_en, lcd_data		//text lcd
+	lcd_rs, lcd_rw, lcd_en, lcd_data,		//text lcd
+	motor_out	//motor_out
 );
 
 	input clk_in;
@@ -41,6 +42,7 @@ module elevator_simulator(
 	output lcd_en;
 	output[7:0] lcd_data;
 	
+	output [3:0] motor_out;
 	
 	//clk_out counting
 	reg[32:0] cnt,cnt2; 
@@ -85,6 +87,15 @@ module elevator_simulator(
 		.elv1_floor		(elv1_floor),
 		.elv2_floor		(elv2_floor)
 	);
+	
+	//motor, spin motor (elevator1 direction)
+	spin_elevator_step_motor
+	(
+		.clk			(clk_in),
+		.motor_out	(motor_out),
+		.elv1_dir	(elv1_dir)
+		);
+	
 	
 	initial
 	begin

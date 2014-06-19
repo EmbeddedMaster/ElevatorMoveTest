@@ -101,9 +101,9 @@ GND*                         : AA6       :        :                   :         
 GND*                         : AA7       :        :                   :         : 1         :                
 VCCA_PLL1                    : AA8       : power  :                   : 1.2V    :           :                
 lcd_en                       : AA9       : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : AA10      :        :                   :         : 8         :                
-GND*                         : AA11      :        :                   :         : 8         :                
-GND*                         : AA12      :        :                   :         : 8         :                
+motor_out[0]                 : AA10      : output : 3.3-V LVTTL       :         : 8         : Y              
+motor_out[1]                 : AA11      : output : 3.3-V LVTTL       :         : 8         : Y              
+motor_out[2]                 : AA12      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND*                         : AA13      :        :                   :         : 7         :                
 segout[7]                    : AA14      : output : 3.3-V LVTTL       :         : 7         : Y              
 segout[6]                    : AA15      : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -125,7 +125,7 @@ GND*                         : AB4       :        :                   :         
 VCCIO1                       : AB5       : power  :                   : 3.3V    : 1         :                
 VCCIO8                       : AB6       : power  :                   : 3.3V    : 8         :                
 GND                          : AB7       : gnd    :                   :         :           :                
-GND*                         : AB8       :        :                   :         : 8         :                
+motor_out[3]                 : AB8       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : AB9       : power  :                   : 3.3V    : 8         :                
 lcd_data[0]                  : AB10      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : AB11      : gnd    :                   :         :           :                

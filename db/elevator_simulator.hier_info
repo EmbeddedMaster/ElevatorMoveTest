@@ -1,5 +1,5 @@
 |elevator_simulator
-clk_in => clk_in.IN3
+clk_in => clk_in.IN4
 resetn => resetn.IN2
 dot_col[0] <= direction_state_dot_matrix:md_elv_directions.dot_col
 dot_col[1] <= direction_state_dot_matrix:md_elv_directions.dot_col
@@ -52,6 +52,10 @@ lcd_data[4] <= draw_elevator_text_lcd:md_elv_draw.lcd_data
 lcd_data[5] <= draw_elevator_text_lcd:md_elv_draw.lcd_data
 lcd_data[6] <= draw_elevator_text_lcd:md_elv_draw.lcd_data
 lcd_data[7] <= draw_elevator_text_lcd:md_elv_draw.lcd_data
+motor_out[0] <= spin_elevator_step_motor:comb_3.motor_out
+motor_out[1] <= spin_elevator_step_motor:comb_3.motor_out
+motor_out[2] <= spin_elevator_step_motor:comb_3.motor_out
+motor_out[3] <= spin_elevator_step_motor:comb_3.motor_out
 
 
 |elevator_simulator|floor_seven_segment:md_elv_floors
@@ -882,5 +886,52 @@ elv2_floor[1] => Decoder1.IN3
 elv2_floor[2] => Decoder1.IN2
 elv2_floor[3] => Decoder1.IN1
 elv2_floor[4] => Decoder1.IN0
+
+
+|elevator_simulator|spin_elevator_step_motor:comb_3
+clk => motor_count[0].CLK
+clk => motor_count[1].CLK
+clk => motor_count[2].CLK
+clk => motor_count[3].CLK
+clk => motor_count[4].CLK
+clk => motor_count[5].CLK
+clk => motor_count[6].CLK
+clk => motor_count[7].CLK
+clk => motor_count[8].CLK
+clk => motor_count[9].CLK
+clk => motor_count[10].CLK
+clk => motor_count[11].CLK
+clk => motor_count[12].CLK
+clk => motor_count[13].CLK
+clk => motor_count[14].CLK
+clk => motor_count[15].CLK
+clk => motor_count[16].CLK
+clk => motor_count[17].CLK
+clk => motor_count[18].CLK
+clk => motor_count[19].CLK
+clk => motor_count[20].CLK
+clk => motor_count[21].CLK
+clk => motor_count[22].CLK
+clk => motor_count[23].CLK
+clk => motor_count[24].CLK
+clk => motor_count[25].CLK
+clk => motor_count[26].CLK
+clk => motor_count[27].CLK
+clk => motor_count[28].CLK
+clk => motor_count[29].CLK
+clk => motor_out[0]~reg0.CLK
+clk => motor_out[1]~reg0.CLK
+clk => motor_out[2]~reg0.CLK
+clk => motor_out[3]~reg0.CLK
+motor_out[0] <= motor_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+motor_out[1] <= motor_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+motor_out[2] <= motor_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+motor_out[3] <= motor_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+elv1_dir[0] => Equal5.IN3
+elv1_dir[0] => Equal6.IN3
+elv1_dir[0] => Equal0.IN31
+elv1_dir[1] => Equal5.IN2
+elv1_dir[1] => Equal6.IN2
+elv1_dir[1] => Equal0.IN0
 
 
