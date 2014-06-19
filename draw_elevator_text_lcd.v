@@ -77,54 +77,6 @@ module draw_elevator_text_lcd(clk, resetn, lcd_rs, lcd_rw, lcd_en, lcd_data, elv
 
 				case (elv1_floor)
 					1 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
-						end
-					2 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_ev,			`lcd_blank	} ; 
-						end 
-					3 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_ev, 		`lcd_blank, 	`lcd_blank	} ; 
-						end
-					4 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-					5 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-					6 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_ev, 		`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-					7 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_blank, 	`lcd_ev, 		`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-					8 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_c <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-					9 : begin
-						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
-						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						end
-				endcase
-				
-				case (elv2_floor)
-					1 : begin
 						reg_f <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						reg_g <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						reg_h <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
@@ -161,13 +113,61 @@ module draw_elevator_text_lcd(clk, resetn, lcd_rs, lcd_rw, lcd_en, lcd_data, elv
 						end
 					8 : begin
 						reg_f <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
-						reg_g <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ;  
+						reg_g <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						reg_h <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						end
 					9 : begin
 						reg_f <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
 						reg_g <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						reg_h <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+				endcase
+				
+				case (elv2_floor)
+					1 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
+						end
+					2 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_ev,			`lcd_blank	} ; 
+						end 
+					3 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_ev, 		`lcd_blank, 	`lcd_blank	} ; 
+						end
+					4 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+					5 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+					6 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_ev, 		`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+					7 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_blank, 	`lcd_ev, 		`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+					8 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_c <= {`lcd_ev, 		`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ;  
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						end
+					9 : begin
+						reg_b <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_ev		} ; 
+						reg_c <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
+						reg_d <= {`lcd_blank, 	`lcd_blank, 	`lcd_blank, 	`lcd_blank	} ; 
 						end
 				endcase
 				
