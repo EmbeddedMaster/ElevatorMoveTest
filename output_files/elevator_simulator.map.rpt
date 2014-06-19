@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elevator_simulator
-Thu Jun 19 18:26:02 2014
+Thu Jun 19 20:08:43 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,10 +15,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,15 +45,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 19 18:26:01 2014           ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 19 20:08:43 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; elevator_simulator                              ;
 ; Top-level Entity Name              ; elevator_simulator                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 435                                             ;
-;     Total combinational functions  ; 430                                             ;
-;     Dedicated logic registers      ; 153                                             ;
-; Total registers                    ; 153                                             ;
+; Total logic elements               ; 342                                             ;
+;     Total combinational functions  ; 338                                             ;
+;     Dedicated logic registers      ; 148                                             ;
+; Total registers                    ; 148                                             ;
 ; Total pins                         ; 53                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -157,14 +158,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; elevator_simulator.v             ; yes             ; User Verilog HDL File  ; C:/GitHub/ElevatorMoveTest/elevator_simulator.v  ;         ;
-; floor_seven_segment.v            ; yes             ; User Verilog HDL File  ; C:/GitHub/ElevatorMoveTest/floor_seven_segment.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; elevator_simulator.v             ; yes             ; User Verilog HDL File  ; C:/GitHub/ElevatorMoveTest/elevator_simulator.v         ;         ;
+; floor_seven_segment.v            ; yes             ; User Verilog HDL File  ; C:/GitHub/ElevatorMoveTest/floor_seven_segment.v        ;         ;
+; direction_state_dot_matrix.v     ; yes             ; User Verilog HDL File  ; C:/GitHub/ElevatorMoveTest/direction_state_dot_matrix.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -172,55 +174,87 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 435    ;
+; Estimated Total logic elements              ; 342    ;
 ;                                             ;        ;
-; Total combinational functions               ; 430    ;
+; Total combinational functions               ; 338    ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 191    ;
-;     -- 3 input functions                    ; 76     ;
-;     -- <=2 input functions                  ; 163    ;
+;     -- 4 input functions                    ; 169    ;
+;     -- 3 input functions                    ; 41     ;
+;     -- <=2 input functions                  ; 128    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 326    ;
-;     -- arithmetic mode                      ; 104    ;
+;     -- normal mode                          ; 237    ;
+;     -- arithmetic mode                      ; 101    ;
 ;                                             ;        ;
-; Total registers                             ; 153    ;
-;     -- Dedicated logic registers            ; 153    ;
+; Total registers                             ; 148    ;
+;     -- Dedicated logic registers            ; 148    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 53     ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; clk_in ;
-; Maximum fan-out                             ; 81     ;
-; Total fan-out                               ; 1760   ;
-; Average fan-out                             ; 2.77   ;
+; Maximum fan-out node                        ; resetn ;
+; Maximum fan-out                             ; 85     ;
+; Total fan-out                               ; 1500   ;
+; Average fan-out                             ; 2.78   ;
 +---------------------------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
-; |elevator_simulator                   ; 430 (282)         ; 153 (106)    ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |elevator_simulator                                  ; work         ;
-;    |floor_seven_segment:m_elv_floors| ; 148 (148)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|floor_seven_segment:m_elv_floors ; work         ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; |elevator_simulator                    ; 338 (175)         ; 148 (79)     ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |elevator_simulator                                   ; work         ;
+;    |direction_state_dot_matrix:comb_3| ; 55 (55)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|direction_state_dot_matrix:comb_3 ; work         ;
+;    |floor_seven_segment:m_elv_floors|  ; 108 (108)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator_simulator|floor_seven_segment:m_elv_floors  ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------+
-; Registers Removed During Synthesis                                  ;
-+---------------------------------------+-----------------------------+
-; Register name                         ; Reason for Removal          ;
-+---------------------------------------+-----------------------------+
-; dot_raw_reg[1]                        ; Merged with dot_raw_reg[0]  ;
-; dot_raw_reg[4,5]                      ; Merged with dot_raw_reg[3]  ;
-; dot_raw_reg[7]                        ; Merged with dot_raw_reg[6]  ;
-; dot_raw_reg[13]                       ; Merged with dot_raw_reg[12] ;
-; dot_raw_reg[8,9,11]                   ; Merged with dot_raw_reg[10] ;
-; elv1_floor[0]                         ; Merged with elv2_floor[0]   ;
-; Total Number of Removed Registers = 9 ;                             ;
-+---------------------------------------+-----------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++--------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                          ; Reason for Removal                                           ;
++--------------------------------------------------------+--------------------------------------------------------------+
+; elv2_dir[1]                                            ; Merged with elv1_dir[1]                                      ;
+; direction_state_dot_matrix:comb_3|cnt[0]               ; Merged with cnt[0]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[1]               ; Merged with cnt[1]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[2]               ; Merged with cnt[2]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[3]               ; Merged with cnt[3]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[4]               ; Merged with cnt[4]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[5]               ; Merged with cnt[5]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[6]               ; Merged with cnt[6]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[7]               ; Merged with cnt[7]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[8]               ; Merged with cnt[8]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[9]               ; Merged with cnt[9]                                           ;
+; direction_state_dot_matrix:comb_3|cnt[10]              ; Merged with cnt[10]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[11]              ; Merged with cnt[11]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[12]              ; Merged with cnt[12]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[13]              ; Merged with cnt[13]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[14]              ; Merged with cnt[14]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[15]              ; Merged with cnt[15]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[16]              ; Merged with cnt[16]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[17]              ; Merged with cnt[17]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[18]              ; Merged with cnt[18]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[19]              ; Merged with cnt[19]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[20]              ; Merged with cnt[20]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[21]              ; Merged with cnt[21]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[22]              ; Merged with cnt[22]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[23]              ; Merged with cnt[23]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[24]              ; Merged with cnt[24]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[25]              ; Merged with cnt[25]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[26]              ; Merged with cnt[26]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[27]              ; Merged with cnt[27]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[28]              ; Merged with cnt[28]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[29]              ; Merged with cnt[29]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[30]              ; Merged with cnt[30]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[31]              ; Merged with cnt[31]                                          ;
+; direction_state_dot_matrix:comb_3|cnt[32]              ; Merged with cnt[32]                                          ;
+; direction_state_dot_matrix:comb_3|dot_raw_reg[4..9,13] ; Merged with direction_state_dot_matrix:comb_3|dot_raw_reg[0] ;
+; elv1_dir[1]                                            ; Stuck at GND due to stuck port data_in                       ;
+; elv2_floor[0]                                          ; Merged with elv1_floor[0]                                    ;
+; Total Number of Removed Registers = 43                 ;                                                              ;
++--------------------------------------------------------+--------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -228,28 +262,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 153   ;
-; Number of registers using Synchronous Clear  ; 8     ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Total registers                              ; 148   ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 9     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 81    ;
+; Number of registers using Clock Enable       ; 86    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |elevator_simulator|dot_count[0]                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|dot_clk_count[3]                         ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|cnt[14]                                  ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|cnt2[25]                                 ;
-; 17:1               ; 10 bits   ; 110 LEs       ; 60 LEs               ; 50 LEs                 ; Yes        ; |elevator_simulator|dot_col_reg[0]                           ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |elevator_simulator|floor_seven_segment:m_elv_floors|com_cnt ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; elv2_dir[0]                            ; 14      ;
+; elv1_floor[0]                          ; 10      ;
+; elv1_floor[3]                          ; 2       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:comb_3|dot_clk_count[2] ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|cnt[2]                                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |elevator_simulator|clk_out                                            ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |elevator_simulator|cnt2[14]                                           ;
+; 17:1               ; 11 bits   ; 121 LEs       ; 66 LEs               ; 55 LEs                 ; Yes        ; |elevator_simulator|direction_state_dot_matrix:comb_3|dot_col_reg[0]   ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:comb_3|dot_raw_reg[1]   ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |elevator_simulator|direction_state_dot_matrix:comb_3|dot_raw_reg[10]  ;
+; 66:1               ; 7 bits    ; 308 LEs       ; 42 LEs               ; 266 LEs                ; Yes        ; |elevator_simulator|floor_seven_segment:m_elv_floors|segout_tmp[7]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |elevator_simulator|floor_seven_segment:m_elv_floors|com_cnt           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -257,7 +306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -267,7 +316,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jun 19 18:25:59 2014
+    Info: Processing started: Thu Jun 19 20:08:41 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elevator_simulator -c elevator_simulator
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (10335): Unrecognized synthesis attribute "tool" at elevator_simulator.v(12)
@@ -275,9 +324,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file elevato
     Info (12023): Found entity 1: elevator_simulator
 Info (12021): Found 1 design units, including 1 entities, in source file floor_seven_segment.v
     Info (12023): Found entity 1: floor_seven_segment
+Info (12021): Found 1 design units, including 1 entities, in source file direction_state_dot_matrix.v
+    Info (12023): Found entity 1: direction_state_dot_matrix
+Critical Warning (10846): Verilog HDL Instantiation warning at elevator_simulator.v(78): instance has no name
 Info (12127): Elaborating entity "elevator_simulator" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(164): truncated value with size 8 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(165): truncated value with size 32 to match size of target (5)
+Warning (10036): Verilog HDL or VHDL warning at elevator_simulator.v(55): object "elv_count" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(145): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(149): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at elevator_simulator.v(152): truncated value with size 32 to match size of target (5)
 Warning (10034): Output port "lcd_data" at elevator_simulator.v(45) has no driver
 Warning (10034): Output port "lcd_rs" at elevator_simulator.v(42) has no driver
 Warning (10034): Output port "lcd_rw" at elevator_simulator.v(43) has no driver
@@ -285,6 +339,7 @@ Warning (10034): Output port "lcd_en" at elevator_simulator.v(44) has no driver
 Info (12128): Elaborating entity "floor_seven_segment" for hierarchy "floor_seven_segment:m_elv_floors"
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(46): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at floor_seven_segment.v(51): truncated value with size 32 to match size of target (15)
+Info (12128): Elaborating entity "direction_state_dot_matrix" for hierarchy "direction_state_dot_matrix:comb_3"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rs" is stuck at GND
     Warning (13410): Pin "lcd_rw" is stuck at GND
@@ -300,14 +355,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (144001): Generated suppressed messages file C:/GitHub/ElevatorMoveTest/output_files/elevator_simulator.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 513 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 416 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 460 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info (21061): Implemented 363 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 25 warnings
     Info: Peak virtual memory: 442 megabytes
-    Info: Processing ended: Thu Jun 19 18:26:02 2014
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Thu Jun 19 20:08:43 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

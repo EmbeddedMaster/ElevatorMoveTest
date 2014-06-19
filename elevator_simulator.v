@@ -44,29 +44,20 @@ module elevator_simulator(
 	output lcd_en;
 	output[7:0] lcd_data;
 	
-	//dot matrix
-	reg [9:0] dot_col_reg;
-	reg [13:0] dot_raw_reg;
-	reg [3:0] dot_clk_count;	//count
-	reg [7:0] dot_count;
-	
-	//7-segment
-	//wire [7:0] seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8;
-	//reg [7:0] segcom_tmp;
-	//reg [7:0] segout_tmp;
 	
 	//text lcd
 	
 	//clk_out counting
 	reg[32:0] cnt,cnt2; 
-	reg clk_out,clk_out2,clk_out3; 
+	reg clk_out,clk_out2; 
 	
 	//About elevator info
-	reg[4:0] elv1_floor, elv2_floor;
+	reg[7:0] elv_count;
 	
-	assign dot_col = dot_col_reg;
-	assign dot_raw = dot_raw_reg;
-
+	reg[4:0] elv1_floor, elv2_floor;
+	reg[1:0] elv1_dir, elv2_dir;
+	
+	//7-segment. presentate floor
 	floor_seven_segment m_elv_floors
 	(
 		.clk				(clk_in), 
@@ -76,22 +67,30 @@ module elevator_simulator(
 		.elv2_floor		(elv2_floor)
 	);
 	
+	direction_state_dot_matrix
+	(
+		.clk			(clk_in),
+		.resetn		(resetn),
+		.dot_col		(dot_col),
+		.dot_raw		(dot_raw),
+		.elv1_dir	(elv1_dir),
+		.elv2_dir	(elv2_dir)
+	);
+	
 	initial
 	begin
-		//dot matrix
-		dot_col_reg	= 0;
-		dot_raw_reg = 0;
-		dot_clk_count 		= 0;
-		dot_count 	= 0;
-		
-		
-		
 		//clk_out counting
 		cnt 		= 0;
 		cnt2 		= 0;
 		clk_out 	= 0;
 		clk_out2 	= 0;
-		clk_out3 	= 0;
+		
+		//elvator
+		elv_count = 0;
+		elv1_floor = 9;
+		elv2_floor = 1;
+		elv1_dir = 1'b0;
+		elv2_dir = 1'b1;
 	end
 
 	always @(posedge clk_in)
@@ -112,192 +111,57 @@ module elevator_simulator(
 		end 
 	end
 
-    always@(posedge clk_out)
-    begin
-		if (resetn == 0)
-		begin
-			dot_clk_count = 0;
-			clk_out2 = 0;
-		end
-		else if(dot_clk_count == 4'd9)
-        begin
-			dot_clk_count = 4'd0;
-			clk_out2 = ~clk_out2;
-        end
-		else
-		begin
-			dot_clk_count = dot_clk_count + 1'b1;
-		end
-    end
-
-	always @(posedge clk_out2)
+	always @(posedge clk_out)
 	begin
 		if (resetn == 0)
-		begin
-			cnt2 = 0; 
-			clk_out3 = 0;
-		end
-		else if (cnt2 < 39)
-		begin
-			cnt2 = cnt2 + 1; 
-		end
-		else if (cnt2 == 39)
-		begin
-			cnt2 = 0; 
-			clk_out3 = ~clk_out3; 
-		end 
+			begin
+				cnt2 = 0; 
+				clk_out2 = 0;
+			end
+		else if (cnt2 < 1000)
+			begin
+				cnt2 = cnt2 + 1; 
+			end
+		else if (cnt2 == 1000)
+			begin
+				cnt2 = 0; 
+				clk_out2 = ~clk_out2; 
+			end 
 	end
 	   
-    always@(posedge clk_out3)
-    begin
+	always@(posedge clk_out2)
+	begin
 		if (resetn == 0)
-		begin
-			dot_count = 0;
-		end
-        else if(dot_count == 4'd7)
 			begin
-				dot_count = 4'b0;
+				elv1_floor = 9;
+				elv2_floor = 1;
+				elv1_dir = 1'b0;
+				elv2_dir = 1'b1;
 			end
 		else
 			begin
-				dot_count = dot_count + 1'b1;
-				elv1_floor = dot_count;
-				elv2_floor = 10 - dot_count;
+				if(elv2_dir==1'b0)
+					begin
+						elv2_floor = elv2_floor - 1;
+					end
+				else
+					begin
+						elv2_floor = elv2_floor + 1;
+					end
+				
+				elv1_floor = 10 - elv2_floor;
+				
+				if(elv2_floor == 9)
+					begin
+						elv1_dir = 1'b1;
+						elv2_dir = 1'b0;
+					end
+				else if(elv2_floor == 1)
+					begin
+						elv1_dir = 1'b0;
+						elv2_dir = 1'b1;
+					end
         	end
-    end
-
-    always@(posedge clk_out)
-    begin
-		
-		if(dot_count == 4'd0)
-		  begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b00111111000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00111111000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111100111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111100111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111100111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111100111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000011111100; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000011111111; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-        
-
-		else if(dot_count == 4'd1)
-		  begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111111111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111111111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111111111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111111111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000000000011; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000000000011; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-
-		else if(dot_count == 4'd2)
-		  begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00111111111111; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111111111111; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00000000000000; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00000000000000; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111111111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b00111111111111; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11111111111111; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-
-		else if(dot_count == 4'd3)
-			begin
-				case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111111111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111111111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111111111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111111111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000000000011; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000000000011; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-				endcase
-			end
-
-		else if(dot_count == 4'd4)
-        begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b00111111000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00111111000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111100111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111100111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111100111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111100111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000011111100; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000011111111; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-
-		else if(dot_count == 4'd5)
-        begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b00000000000111; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b00000000000111; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b11111111111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b11111111111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b11111111111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b11111111111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11111111000011; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11111111000011; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-
-		else if(dot_count == 4'd6)
-        begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b11000000000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111111111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111111111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111111111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111111111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000000000011; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000000000011; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-
-
-		else if(dot_count == 4'd7)
-        begin
-			case(dot_clk_count)
-            	4'd0	: begin	dot_col_reg = 10'b1000000000; dot_raw_reg = 14'b11111111111111; end
-            	4'd1	: begin	dot_col_reg = 10'b0100000000; dot_raw_reg = 14'b11000011000011; end
-            	4'd2	: begin	dot_col_reg = 10'b0010000000; dot_raw_reg = 14'b11000011000011; end
-            	4'd3	: begin	dot_col_reg = 10'b0001000000; dot_raw_reg = 14'b00111100111100; end
-            	4'd4	: begin	dot_col_reg = 10'b0000100000; dot_raw_reg = 14'b00111100111100; end
-            	4'd5	: begin	dot_col_reg = 10'b0000010000; dot_raw_reg = 14'b00111100111100; end
-            	4'd6	: begin	dot_col_reg = 10'b0000001000; dot_raw_reg = 14'b00111100111100; end
-            	4'd7	: begin	dot_col_reg = 10'b0000000100; dot_raw_reg = 14'b11000011000011; end
-            	4'd8	: begin	dot_col_reg = 10'b0000000010; dot_raw_reg = 14'b11000011000011; end
-            	4'd9	: begin	dot_col_reg = 10'b0000000001; dot_raw_reg = 14'b11111111111111; end
-            endcase
-        end
-		  
 	end
+
 endmodule

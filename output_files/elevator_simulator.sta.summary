@@ -3,99 +3,99 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk_in'
-Slack : -7.946
-TNS   : -416.048
-
-Type  : Slow Model Setup 'clk_out2'
-Slack : -6.253
-TNS   : -193.122
+Slack : -10.027
+TNS   : -448.880
 
 Type  : Slow Model Setup 'clk_out'
-Slack : -4.300
-TNS   : -68.206
+Slack : -5.759
+TNS   : -181.917
 
-Type  : Slow Model Setup 'clk_out3'
-Slack : -2.951
-TNS   : -44.564
+Type  : Slow Model Setup 'clk_out2'
+Slack : -3.748
+TNS   : -32.640
+
+Type  : Slow Model Setup 'direction_state_dot_matrix:comb_3|clk_out'
+Slack : -2.678
+TNS   : -41.967
 
 Type  : Slow Model Hold 'clk_out'
-Slack : -4.365
-TNS   : -4.365
-
-Type  : Slow Model Hold 'clk_out2'
-Slack : -4.266
-TNS   : -4.266
+Slack : -3.987
+TNS   : -3.987
 
 Type  : Slow Model Hold 'clk_in'
-Slack : -3.006
-TNS   : -3.006
+Slack : -2.971
+TNS   : -5.942
 
-Type  : Slow Model Hold 'clk_out3'
+Type  : Slow Model Hold 'clk_out2'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'direction_state_dot_matrix:comb_3|clk_out'
 Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk_in'
 Slack : -1.941
-TNS   : -122.145
-
-Type  : Slow Model Minimum Pulse Width 'clk_out2'
-Slack : -0.742
-TNS   : -50.456
+TNS   : -123.629
 
 Type  : Slow Model Minimum Pulse Width 'clk_out'
 Slack : -0.742
+TNS   : -50.456
+
+Type  : Slow Model Minimum Pulse Width 'direction_state_dot_matrix:comb_3|clk_out'
+Slack : -0.742
 TNS   : -31.164
 
-Type  : Slow Model Minimum Pulse Width 'clk_out3'
+Type  : Slow Model Minimum Pulse Width 'clk_out2'
 Slack : -0.742
-TNS   : -25.228
+TNS   : -16.324
 
 Type  : Fast Model Setup 'clk_in'
-Slack : -1.850
-TNS   : -83.000
-
-Type  : Fast Model Setup 'clk_out2'
-Slack : -1.562
-TNS   : -41.065
+Slack : -2.581
+TNS   : -91.578
 
 Type  : Fast Model Setup 'clk_out'
-Slack : -0.657
-TNS   : -8.668
+Slack : -1.460
+TNS   : -38.176
 
-Type  : Fast Model Setup 'clk_out3'
-Slack : -0.373
-TNS   : -3.721
+Type  : Fast Model Setup 'clk_out2'
+Slack : -0.434
+TNS   : -2.719
+
+Type  : Fast Model Setup 'direction_state_dot_matrix:comb_3|clk_out'
+Slack : -0.145
+TNS   : -1.408
 
 Type  : Fast Model Hold 'clk_out'
-Slack : -1.972
-TNS   : -1.972
-
-Type  : Fast Model Hold 'clk_out2'
-Slack : -1.945
-TNS   : -1.945
+Slack : -1.801
+TNS   : -1.801
 
 Type  : Fast Model Hold 'clk_in'
-Slack : -1.644
-TNS   : -1.644
+Slack : -1.609
+TNS   : -3.218
 
-Type  : Fast Model Hold 'clk_out3'
+Type  : Fast Model Hold 'clk_out2'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'direction_state_dot_matrix:comb_3|clk_out'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk_in'
 Slack : -1.380
-TNS   : -82.380
-
-Type  : Fast Model Minimum Pulse Width 'clk_out2'
-Slack : -0.500
-TNS   : -34.000
+TNS   : -83.380
 
 Type  : Fast Model Minimum Pulse Width 'clk_out'
 Slack : -0.500
+TNS   : -34.000
+
+Type  : Fast Model Minimum Pulse Width 'direction_state_dot_matrix:comb_3|clk_out'
+Slack : -0.500
 TNS   : -21.000
 
-Type  : Fast Model Minimum Pulse Width 'clk_out3'
+Type  : Fast Model Minimum Pulse Width 'clk_out2'
 Slack : -0.500
-TNS   : -17.000
+TNS   : -11.000
 
 ------------------------------------------------------------
