@@ -21,11 +21,19 @@
 `define lcd_0 8'b00110000
 `define lcd_o 8'b01001111
 `define lcd_s_o 8'b01101111
-`define lcd_ev ldc_0
-`define add_line_1 8'b10000000
-`define add_line_2 8'b11000000
-`define add_line_3 8'b10010100
-`define add_line_4 8'b11010100
+`define lcd_ev ldc_o
+
+`define seg7_0 8'b00000011
+`define seg7_1 8'b10011111
+`define seg7_2 8'b00100101
+`define seg7_3 8'b00001101
+`define seg7_4 8'b10011001
+`define seg7_5 8'b01001001
+`define seg7_6 8'b01000001
+`define seg7_7 8'b00011011
+`define seg7_8 8'b00000001
+`define seg7_9 8'b00001001
+`define seg7_no 8'b11111111
 
 module elevator_simulator(
 	clk_in, resetn,
