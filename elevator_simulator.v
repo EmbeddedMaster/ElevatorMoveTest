@@ -217,7 +217,8 @@ module elevator_simulator(
 	
 	always @(posedge input_confirm)
 	begin
-		//sched_target = min(get_weight(elv1_stop_list,__current,__destination,elv1_dir),get_weight(elv2_stop_list,__current,__destination,elv2_dir));
+		sched_target = min(get_weight(elv1_stop_list, __current, __destination, elv1_dir),
+								 get_weight(elv2_stop_list, __current, __destination, elv2_dir));
 		dest = __destination;
 		//elv1_floor = __current;
 		//elv2_floor = __destination;
@@ -263,11 +264,11 @@ module elevator_simulator(
 	
 	function [4:0] get_max_floor;
 		input [8:0] stop_list;
-		reg [4:0] i;
+		integer i;
 	begin
 		for(i=8; i>=0; i = i-1)
 		begin
-			if(stop_list[i]==1)
+			if(stop_list[i] == 1)
 				get_max_floor = i;
 		end
 	end
@@ -275,7 +276,7 @@ module elevator_simulator(
 	
 	function [4:0] get_min_floor;
 		input [8:0] stop_list;
-		reg [4:0] i;
+		integer i;
 	begin
 		for(i=0; i<8; i = i+1)
 		begin
