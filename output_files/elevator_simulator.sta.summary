@@ -2,41 +2,41 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'clk_in'
+Slack : -7.946
+TNS   : -416.048
+
 Type  : Slow Model Setup 'clk_out2'
-Slack : -5.980
-TNS   : -187.083
+Slack : -6.253
+TNS   : -193.122
 
 Type  : Slow Model Setup 'clk_out'
-Slack : -5.911
-TNS   : -96.886
-
-Type  : Slow Model Setup 'clk_in'
-Slack : -5.667
-TNS   : -178.778
+Slack : -4.300
+TNS   : -68.206
 
 Type  : Slow Model Setup 'clk_out3'
-Slack : -2.202
-TNS   : -17.616
+Slack : -2.951
+TNS   : -44.564
 
 Type  : Slow Model Hold 'clk_out'
-Slack : -4.617
-TNS   : -4.617
-
-Type  : Slow Model Hold 'clk_in'
-Slack : -3.014
-TNS   : -3.014
+Slack : -4.365
+TNS   : -4.365
 
 Type  : Slow Model Hold 'clk_out2'
-Slack : -2.834
-TNS   : -2.834
+Slack : -4.266
+TNS   : -4.266
+
+Type  : Slow Model Hold 'clk_in'
+Slack : -3.006
+TNS   : -3.006
 
 Type  : Slow Model Hold 'clk_out3'
-Slack : 0.753
+Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk_in'
 Slack : -1.941
-TNS   : -52.397
+TNS   : -122.145
 
 Type  : Slow Model Minimum Pulse Width 'clk_out2'
 Slack : -0.742
@@ -44,47 +44,47 @@ TNS   : -50.456
 
 Type  : Slow Model Minimum Pulse Width 'clk_out'
 Slack : -0.742
-TNS   : -34.132
+TNS   : -31.164
 
 Type  : Slow Model Minimum Pulse Width 'clk_out3'
 Slack : -0.742
-TNS   : -11.872
-
-Type  : Fast Model Setup 'clk_out2'
-Slack : -1.442
-TNS   : -40.374
+TNS   : -25.228
 
 Type  : Fast Model Setup 'clk_in'
-Slack : -1.249
-TNS   : -36.618
+Slack : -1.850
+TNS   : -83.000
+
+Type  : Fast Model Setup 'clk_out2'
+Slack : -1.562
+TNS   : -41.065
 
 Type  : Fast Model Setup 'clk_out'
-Slack : -1.108
-TNS   : -16.845
+Slack : -0.657
+TNS   : -8.668
 
 Type  : Fast Model Setup 'clk_out3'
-Slack : -0.096
-TNS   : -0.768
+Slack : -0.373
+TNS   : -3.721
 
 Type  : Fast Model Hold 'clk_out'
-Slack : -2.041
-TNS   : -2.041
-
-Type  : Fast Model Hold 'clk_in'
-Slack : -1.641
-TNS   : -1.641
+Slack : -1.972
+TNS   : -1.972
 
 Type  : Fast Model Hold 'clk_out2'
-Slack : -1.421
-TNS   : -1.421
+Slack : -1.945
+TNS   : -1.945
+
+Type  : Fast Model Hold 'clk_in'
+Slack : -1.644
+TNS   : -1.644
 
 Type  : Fast Model Hold 'clk_out3'
-Slack : 0.244
+Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk_in'
 Slack : -1.380
-TNS   : -35.380
+TNS   : -82.380
 
 Type  : Fast Model Minimum Pulse Width 'clk_out2'
 Slack : -0.500
@@ -92,10 +92,10 @@ TNS   : -34.000
 
 Type  : Fast Model Minimum Pulse Width 'clk_out'
 Slack : -0.500
-TNS   : -23.000
+TNS   : -21.000
 
 Type  : Fast Model Minimum Pulse Width 'clk_out3'
 Slack : -0.500
-TNS   : -8.000
+TNS   : -17.000
 
 ------------------------------------------------------------
