@@ -18,8 +18,6 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
 module elevator_simulator(
 	clk_in, resetn,
 	dot_col, dot_raw,							// dot matrix
@@ -68,8 +66,9 @@ module elevator_simulator(
 	reg[4:0] elv1_floor, elv2_floor;
 	reg[1:0] elv1_dir, elv2_dir;
 	reg[3:0] elv1_stop_count, elv2_stop_count;
-	reg[4:0] elv1_stop_list [32:0]; 
-	reg[4:0] elv2_stop_list [32:0];
+	reg[4:0] elv1_stop_list [32:1]; 
+	reg[4:0] elv2_stop_list [32:1];
+	integer elv1_max_floor, elv2_max_floor;
 	integer i;
 	
 	reg[4:0] curr, dest, prev_curr, prev_dest;
@@ -145,11 +144,11 @@ module elevator_simulator(
 		elv1_stop_count = 0;
 		elv2_stop_count = 0;
 		
-		for (i=0; i<8; i = i+1) begin
+		for (i=1; i<33; i = i+1) begin
 			elv1_stop_list[i] = 0;
 		end
 		
-		for (i=0; i<8; i = i+1) begin
+		for (i=1; i<33; i = i+1) begin
 			elv2_stop_list[i] = 0;
 		end
 		
@@ -167,14 +166,12 @@ module elevator_simulator(
 
 	always @(posedge clk_in)
 	begin
+		// every clock
 		if (count < 64'd24000000) begin
 			count = count + 1; 
 			
 			/*** do something posedge cpu clock ***/
 			//add stop list
-			
-			// condition could be removed...
-			
 			if(confirm_cnt != prev_confirm_cnt) begin
 				if(sched_target == 0)
 				begin
@@ -190,6 +187,7 @@ module elevator_simulator(
 				prev_confirm_cnt = confirm_cnt;
 			end
 		end
+		// every 1 second
 		else begin
 			count = 0;
 			/*** do someting...	(here is 1sec clk out) ***/
@@ -208,23 +206,23 @@ module elevator_simulator(
 			end
 			else begin
 				
+				elv1_max_floor = get_max_floor(0);
+				
 				//check dir
-				if(get_max_floor(0) == 0) begin	//check stop list is empty
+				if(elv1_max_floor == 0) begin	//check stop list is empty
 					elv1_dir = 3;
 				end
 				else begin
-					if((get_max_floor(0)-elv1_floor)<0) begin
+					if((elv1_max_floor-elv1_floor)<0) begin
 						elv1_dir = 0;
-						elv1_floor = elv1_floor - 1;
 					end
-					else if((get_max_floor(0)-elv1_floor)>0) begin
+					else if((elv1_max_floor-elv1_floor)>0) begin
 						elv1_dir = 1;
-						elv1_floor = elv1_floor + 1;
 					end
 				end
 			end
 			
-			//move
+			//move the elevator to specific direction
 			if(elv1_dir == 1) begin
 				elv1_floor = elv1_floor + 1;
 			end
@@ -247,15 +245,18 @@ module elevator_simulator(
 				end
 			end
 			else begin
+			
+				elv2_max_floor = get_max_floor(1);
+				
 				//check dir
-				if(get_max_floor(1) == 0) begin	//check stop list is empty
+				if(elv2_max_floor == 0) begin	//check stop list is empty
 					elv2_dir = 3;
 				end
 				else begin
-					if((get_max_floor(1)-elv2_floor)<0) begin
+					if((elv2_max_floor-elv2_floor)<0) begin
 						elv2_dir = 0;
 					end
-					else begin
+					else if((elv2_max_floor-elv2_floor)>0) begin
 						elv2_dir = 1;
 					end
 				end
@@ -270,29 +271,8 @@ module elevator_simulator(
 			end
 			else begin
 			end
-			
-			/////DO NOT ERASE!
-			/*if(elv2_dir==1'b0) begin
-				elv2_floor = elv2_floor - 1;
-			end
-			else begin
-				elv2_floor = elv2_floor + 1;
-			end
-			
-			elv1_floor = 10 - elv2_floor;
-			
-			if(elv2_floor == 9) begin
-				elv1_dir = 1'b1;
-				elv2_dir = 1'b0;
-			end
-			else if(elv2_floor == 1) begin
-				elv1_dir = 1'b0;
-				elv2_dir = 1'b1;
-			end*/
-				
-		end 
-		
-		
+		end
+
 	end
 
 	always @(posedge input_confirm)
@@ -315,11 +295,15 @@ module elevator_simulator(
 	begin
 		if(direction == 1)
 		begin
-			get_weight = 2*(get_max_floor(elevator)-floor) + abs(current - floor); 
+			get_weight = 2*(get_max_floor(elevator)-floor) + abs(current - floor);
 		end
 		else if(direction == 0)
 		begin
 			get_weight = 2*(current-get_min_floor(elevator)) + abs(current-floor);
+		end
+		else
+		begin
+			get_weight = abs(current-floor);
 		end
 	end
 	endfunction
@@ -349,13 +333,12 @@ module elevator_simulator(
 		input [1:0] elevator;
 		integer i;
 	begin
-		//stop_list is empty
 		get_max_floor = 0;
 	
 		if(elevator == 0) begin
-			for(i=9; i>=0; i = i-1)
+			for(i=1; i<10; i = i+1)
 			begin
-				if(elv1_stop_list[i] == 1) begin
+				if(elv1_stop_list[i]==1) begin
 					if(i>get_max_floor) begin
 						get_max_floor = i;
 					end
@@ -363,9 +346,9 @@ module elevator_simulator(
 			end
 		end
 		else begin
-			for(i=9; i>=0; i = i-1)
+			for(i=1; i<10; i = i+1)
 			begin
-				if(elv2_stop_list[i] == 1) begin
+				if(elv2_stop_list[i]==1) begin
 					if(i>get_max_floor) begin
 						get_max_floor = i;
 					end
@@ -378,11 +361,11 @@ module elevator_simulator(
 	function integer get_min_floor;
 		input [1:0] elevator;
 		integer i;
-	begin//stop_list is empty
+	begin
 		get_min_floor = 10;
 		
 		if(elevator == 0) begin
-			for(i=0; i<8; i = i+1)
+			for(i=1; i<10; i = i+1)
 			begin
 				if(elv1_stop_list[i]==1) begin
 					if(i<get_min_floor) begin
@@ -392,7 +375,7 @@ module elevator_simulator(
 			end
 		end
 		else begin
-			for(i=0; i<8; i = i+1)
+			for(i=1; i<10; i = i+1)
 			begin
 				if(elv2_stop_list[i]==1) begin
 					if(i<get_min_floor) begin

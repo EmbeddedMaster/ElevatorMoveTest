@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C50F672) Path("C:/GitHub/ElevatorMoveTest/output_files/") File("elevator_simulator.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C50F672) Path("C:/Users/Namyun Kim/Documents/GitHub/ElevatorMoveTest/output_files/") File("elevator_simulator.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
