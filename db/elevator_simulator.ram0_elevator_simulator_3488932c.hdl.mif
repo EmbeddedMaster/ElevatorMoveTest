@@ -1,0 +1,44 @@
+-- begin_signature
+-- elevator_simulator
+-- end_signature
+WIDTH=5;
+DEPTH=33;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	32 :	XXXXX;
+	31 :	XXXXX;
+	30 :	XXXXX;
+	29 :	XXXXX;
+	28 :	XXXXX;
+	27 :	XXXXX;
+	26 :	XXXXX;
+	25 :	XXXXX;
+	24 :	XXXXX;
+	23 :	XXXXX;
+	22 :	XXXXX;
+	21 :	XXXXX;
+	20 :	XXXXX;
+	19 :	XXXXX;
+	18 :	XXXXX;
+	17 :	XXXXX;
+	16 :	XXXXX;
+	15 :	XXXXX;
+	14 :	XXXXX;
+	13 :	XXXXX;
+	12 :	XXXXX;
+	11 :	XXXXX;
+	10 :	XXXXX;
+	9 :	XXXXX;
+	8 :	XXXXX;
+	7 :	00000;
+	6 :	00000;
+	5 :	00000;
+	4 :	00000;
+	3 :	00000;
+	2 :	00000;
+	1 :	00001;
+	0 :	00000;
+END;
